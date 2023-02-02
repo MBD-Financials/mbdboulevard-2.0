@@ -64,15 +64,23 @@ const author = () => {
   const [myNFTs, setMyNFTs] = useState([]);
 
   useEffect(() => {
+    if (currentAccount) {
     fetchMyNFTsOrListedNFTs("fetchItemsListed").then((items) => {
       setNfts(items);
+      
     });
+  }
+  else{
+    console.log("No current Account");
+  }
   }, []);
 
   useEffect(() => {
+    if (currentAccount) {
     fetchMyNFTsOrListedNFTs("fetchMyNFTs").then((items) => {
       setMyNFTs(items);
     });
+  }
   }, []);
 
   return (

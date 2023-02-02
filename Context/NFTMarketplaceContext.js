@@ -256,22 +256,26 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
   //--FETCHING MY NFT OR LISTED NFTs
   const fetchMyNFTsOrListedNFTs = async (type) => {
+    
     try {
       if (currentAccount) {
         const contract = await connectingWithSmartContract();
-
         const data =
           type == "fetchItemsListed"
             ? await contract.fetchItemsListed()
             : await contract.fetchMyNFTs();
-
+        
         const items = await Promise.all(
           data.map(
             async ({ tokenId, seller, owner, price: unformattedPrice }) => {
               const tokenURI = await contract.tokenURI(tokenId);
+              
+              var tokenSplit = tokenURI.split('/').pop()
+              const tokenURISend = `https://ipfs.io/ipfs/${tokenSplit}`
               const {
                 data: { image, name, description },
-              } = await axios.get(tokenURI);
+              } = await axios.get(tokenURISend);
+
               const price = ethers.utils.formatUnits(
                 unformattedPrice.toString(),
                 "ether"
@@ -290,11 +294,14 @@ export const NFTMarketplaceProvider = ({ children }) => {
             }
           )
         );
+        console.log(items);
         return items;
+      
       }
     } catch (error) {
       setError("Error while fetching listed NFTs");
       setOpenError(true);
+      console.log("ERROR DURING FETCHING");
     }
   };
 
