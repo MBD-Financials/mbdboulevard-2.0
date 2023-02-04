@@ -80,7 +80,7 @@ export const NFTMarketplaceContext = React.createContext();
 export const NFTMarketplaceProvider = ({ children }) => {
   const titleData = "Discover, collect, and sell NFTs";
 
-  //------USESTAT
+  //------USESTAT-------
   const [error, setError] = useState("");
   const [openError, setOpenError] = useState(false);
   const [currentAccount, setCurrentAccount] = useState("");
@@ -96,7 +96,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       const accounts = await window.ethereum.request({
         method: "eth_accounts",
       });
-
+      console.log(accounts);
       if (accounts.length) {
         setCurrentAccount(accounts[0]);
         // console.log(accounts[0]);

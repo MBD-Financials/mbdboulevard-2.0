@@ -56,12 +56,18 @@ const author = () => {
   const [following, setFollowing] = useState(false);
 
   //IMPORT SMART CONTRACT DATA
-  const { fetchMyNFTsOrListedNFTs, currentAccount } = useContext(
+  const { fetchMyNFTsOrListedNFTs,checkIfWalletConnected ,currentAccount } = useContext(
     NFTMarketplaceContext
   );
 
   const [nfts, setNfts] = useState([]);
   const [myNFTs, setMyNFTs] = useState([]);
+
+  
+  useEffect(() => {
+    checkIfWalletConnected();
+  }, []);
+
 
   useEffect(() => {
     if (currentAccount) {
@@ -73,7 +79,7 @@ const author = () => {
   else{
     console.log("No current Account");
   }
-  }, []);
+  }, [currentAccount]);
 
   useEffect(() => {
     if (currentAccount) {
@@ -81,7 +87,7 @@ const author = () => {
       setMyNFTs(items);
     });
   }
-  }, []);
+  }, [currentAccount]);
 
   return (
     <div className={Style.author}>

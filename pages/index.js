@@ -19,6 +19,7 @@ import {
   Video,
   Loader,
 } from "../components/componentsindex";
+
 import { getTopCreators } from "../TopCreators/TopCreators";
 
 //IMPORTING CONTRCT DATA
@@ -28,15 +29,13 @@ const Home = () => {
   const { checkIfWalletConnected, currentAccount } = useContext(
     NFTMarketplaceContext
   );
-  useEffect(() => {
-    checkIfWalletConnected();
-  }, []);
-
   const { fetchNFTs } = useContext(NFTMarketplaceContext);
   const [nfts, setNfts] = useState([]);
   const [nftsCopy, setNftsCopy] = useState([]);
 
   useEffect(() => {
+    console.log("currentAccount");
+
     if (currentAccount) {
       fetchNFTs().then((items) => {
         setNfts(items.reverse());
@@ -44,7 +43,30 @@ const Home = () => {
         console.log(nfts);
       });
     }
+  },[currentAccount]);
+  
+  useEffect(() => {
+    checkIfWalletConnected();
   }, []);
+
+  // useEffect(() => {
+  //   const wait = async () => {
+  //     await checkIfWalletConnected();
+  //     console.log(currentAccount);
+  //     if (currentAccount) {
+  //       console.log("inside")
+  //       fetchNFTs().then((items) => {
+  //         setNfts(items.reverse());
+  //         setNftsCopy(items);
+  //         console.log(nfts);
+  //       });
+  //   }}
+  //   wait();
+  // },);
+
+  
+
+  
 
   //CREATOR LIST
 
