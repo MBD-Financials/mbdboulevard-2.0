@@ -23,33 +23,32 @@ const contactus = () => {
             <div className={Style.contactus_box_box_left_item}>
               <h3>🗺 ADDRESS</h3>
               <p>
-                Photo booth tattooed prism, portland taiyaki hoodie neutra
-                typewriter
+                68 Circular road #02-01, Singapore 049422.
               </p>
             </div>
             <div className={Style.contactus_box_box_left_item}>
               <h3>💌 EMAIL</h3>
-              <p>nc.example@example.com</p>
+              <p>info@mbdfinancials.com</p>
             </div>
             <div className={Style.contactus_box_box_left_item}>
               <h3>☎ PHONE</h3>
-              <p>000-123-456-7890</p>
+              <p>ET phone home</p>
             </div>
             <div className={Style.contactus_box_box_left_item}>
               <h3>🌏 SOCIALS</h3>
-              <a href="#">
+              <a href="https://www.facebook.com/MBDFinancials">
                 <TiSocialFacebook />
               </a>
-              <a href="#">
+              <a href="https://www.linkedin.com/company/mbdfinancials/">
                 <TiSocialLinkedin />
               </a>
-              <a href="#">
+              <a href="https://www.instagram.com/mbdfinancials/">
                 <TiSocialInstagram />
               </a>
-              <a href="#">
+              <a href="https://www.youtube.com/channel/UCju8ObUSidjgEvevlXc9pVg">
                 <TiSocialYoutube />
               </a>
-              <a href="#">
+              <a href="https://twitter.com/MBDFinancials">
                 <TiSocialTwitter />
               </a>
             </div>
@@ -60,7 +59,7 @@ const contactus = () => {
                 <label htmlFor="name">Full Name</label>
                 <input
                   type="text"
-                  placeholder="shoaib bhai"
+                  placeholder="Captain F Harlock"
                   className={formStyle.Form_box_input_userName}
                 />
               </div>
@@ -80,7 +79,7 @@ const contactus = () => {
                   id=""
                   cols="30"
                   rows="6"
-                  placeholder="something about yourself in few words"
+                  placeholder="something about yourself in a few words"
                 ></textarea>
               </div>
               <Button

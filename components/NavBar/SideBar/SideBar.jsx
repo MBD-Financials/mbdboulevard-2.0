@@ -125,19 +125,19 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
           your own stories and share them
         </p>
         <div className={Style.sideBar_social}>
-          <a href="#">
+          <a href="https://www.facebook.com/MBDFinancials">
             <TiSocialFacebook />
           </a>
-          <a href="#">
+          <a href="https://www.linkedin.com/company/mbdfinancials/">
             <TiSocialLinkedin />
           </a>
-          <a href="#">
+          <a href="https://twitter.com/MBDFinancials">
             <TiSocialTwitter />
           </a>
-          <a href="#">
+          <a href="https://www.youtube.com/channel/UCju8ObUSidjgEvevlXc9pVg">
             <TiSocialYoutube />
           </a>
-          <a href="#">
+          <a href="https://www.instagram.com/mbdfinancials/">
             <TiSocialInstagram />
           </a>
         </div>

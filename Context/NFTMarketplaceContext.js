@@ -78,7 +78,7 @@ const connectToTransferFunds = async () => {
 export const NFTMarketplaceContext = React.createContext();
 
 export const NFTMarketplaceProvider = ({ children }) => {
-  const titleData = "Discover, collect, and sell NFTs";
+  const titleData = "Future of Shopping with our AI NFT Marketplace";
 
   //------USESTAT
   const [error, setError] = useState("");

@@ -14,7 +14,7 @@ const Subscribe = () => {
           <h2>Never miss a drop</h2>
           <p>
             Subcribe to our super-exclusive drop list and be the first to know
-            abour upcoming drops
+            about upcoming drops
           </p>
           <div className={Style.subscribe_box_left_box}>
             <span>01</span>
@@ -23,7 +23,7 @@ const Subscribe = () => {
 
           <div className={Style.subscribe_box_left_box}>
             <span>02</span>
-            <small>Get premium magazines</small>
+            <small>Get MBD Gem Rewards</small>
           </div>
 
           <div className={Style.subscribe_box_left_input}>
