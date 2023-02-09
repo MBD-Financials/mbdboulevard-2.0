@@ -61,6 +61,9 @@ const fetchTransferFundsContract = (signerOrProvider) =>
 
 const connectToTransferFunds = async () => {
   try {
+    // const web3Modal = new Wenb3Modal();
+    // const connection = await web3Modal.connect();
+    // const provider = new ethers.providers.Web3Provider(connection);
     const provider = new ethers.providers.JsonRpcProvider(
       "https://goerli.infura.io/v3/22e93319c7504d95a136f7c2c31714b4"
     );
@@ -77,7 +80,7 @@ export const NFTMarketplaceContext = React.createContext();
 export const NFTMarketplaceProvider = ({ children }) => {
   const titleData = "Future of Shopping with our AI NFT Marketplace";
 
-  //------USESTAT-------
+  //------USESTAT
   const [error, setError] = useState("");
   const [openError, setOpenError] = useState(false);
   const [currentAccount, setCurrentAccount] = useState("");
@@ -91,35 +94,34 @@ export const NFTMarketplaceProvider = ({ children }) => {
   const checkIfWalletConnected = async () => {
     try {
       if (!window.ethereum)
-        setError("Install MetaMask");
-      else{
-        const accounts = await window.ethereum.request({
-          method: "eth_accounts",
-        });
-        
-        if (accounts.length) {
-          setCurrentAccount(accounts[0]);
-        } else {
-          setError("No Account Found");
-          // setOpenError(true);
-        }
-  
-        const provider = await new ethers.providers.Web3Provider(window.ethereum);
+        return setOpenError(true), setError("Install MetaMask");
+
+      const accounts = await window.ethereum.request({
+        method: "eth_accounts",
+      });
+
+      if (accounts.length) {
+        setCurrentAccount(accounts[0]);
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
         const getBalance = await provider.getBalance(accounts[0]);
         const bal = ethers.utils.formatEther(getBalance);
         setAccountBalance(bal);
+        // console.log(accounts[0]);
+        connectingWithSmartContract();
+      } else {
+        setError("No Account Found");
+        // setOpenError(true);
       }
       
     } catch (error) {
-      // setError("Something wrong while connecting to wallet");
-      console.log(error)
+      setError("Something wrong while connecting to wallet");
       // setOpenError(true);
     }
   };
 
   useEffect(() => {
     checkIfWalletConnected();
-    connectingWithSmartContract();
+    // connectingWithSmartContract();
   }, []);
 
   //---CONNET WALLET FUNCTION
@@ -133,7 +135,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       });
       setCurrentAccount(accounts[0]);
       createUser(currentAccount);
-      
+      // window.location.reload();
     } catch (error) {
       setError("Error while connecting to wallet");
       setOpenError(true);
@@ -260,20 +262,21 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
   //--FETCHING MY NFT OR LISTED NFTs
   const fetchMyNFTsOrListedNFTs = async (type) => {
-    
+
     try {
       if (currentAccount) {
         const contract = await connectingWithSmartContract();
+
         const data =
           type == "fetchItemsListed"
             ? await contract.fetchItemsListed()
             : await contract.fetchMyNFTs();
-        
+
         const items = await Promise.all(
           data.map(
             async ({ tokenId, seller, owner, price: unformattedPrice }) => {
               const tokenURI = await contract.tokenURI(tokenId);
-              
+
               var tokenSplit = tokenURI.split('/').pop()
               const tokenURISend = `https://ipfs.io/ipfs/${tokenSplit}`
               const {
@@ -298,14 +301,12 @@ export const NFTMarketplaceProvider = ({ children }) => {
             }
           )
         );
-        console.log(items);
         return items;
-      
+        
       }
     } catch (error) {
       setError("Error while fetching listed NFTs");
       setOpenError(true);
-      console.log("ERROR DURING FETCHING");
     }
   };
 
@@ -332,6 +333,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
   };
 
   //------------------------------------------------------------------
+  //---TRANSFER FUNDS
   
 
   const transferEther = async (address, ether, message) => {
@@ -444,8 +446,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
       console.log("Error during creating nft")
     }
   };
-
-
 
 
 
