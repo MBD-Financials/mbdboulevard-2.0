@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useContext} from "react";
 import { MdOutlineHttp, MdOutlineAttachFile } from "react-icons/md";
 import { FaPercent } from "react-icons/fa";
 import { AiTwotonePropertySafety } from "react-icons/ai";
@@ -13,7 +13,7 @@ import images from "../img";
 import { Button } from "../components/componentsindex.js";
 import { DropZone } from "../UploadNFT/uploadNFTIndex.js";
 
-const UloadNFT = ({ uploadToIPFS, createNFT }) => {
+const UloadNFT = ({ uploadToIPFS, createNFT}) => {
   const [price, setPrice] = useState("");
   const [active, setActive] = useState(0);
   const [name, setName] = useState("");
@@ -213,20 +213,15 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
         <div className={Style.upload_box_btn}>
           <Button
             btnName="Upload"
-            handleClick={async () =>
+            handleClick={async () =>{
               createNFT(
                 name,
                 price,
                 image,
                 description,
                 router
-                // website,
-                // royalties,
-                // fileSize,
-                // category,
-                // properties
               )
-            }
+            }}
             classStyle={Style.upload_box_btn_style}
           />
           <Button

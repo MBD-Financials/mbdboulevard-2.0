@@ -25,7 +25,7 @@ const aboutus = () => {
     },
     {
       name: "Usama Latif",
-      position: "Full-Stack Developer",
+      position: "Full-Stack Blockchain Developer",
       images: images.founder4,
     },
   ];

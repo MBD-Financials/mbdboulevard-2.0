@@ -34,8 +34,6 @@ const Home = () => {
   const [nftsCopy, setNftsCopy] = useState([]);
 
   useEffect(() => {
-    console.log("currentAccount");
-
     if (currentAccount) {
       fetchNFTs().then((items) => {
         setNfts(items.reverse());
@@ -45,9 +43,9 @@ const Home = () => {
     }
   },[currentAccount]);
   
-  useEffect(() => {
-    checkIfWalletConnected();
-  }, []);
+  // useEffect(() => {
+  //   checkIfWalletConnected();
+  // }, []);
 
   // useEffect(() => {
   //   const wait = async () => {
