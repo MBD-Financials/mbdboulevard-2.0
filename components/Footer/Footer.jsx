@@ -27,25 +27,23 @@ const Footer = () => {
             <DiJqueryLogo className={Style.footer_box_social_logo} />
           </a>
           <p>
-            The world’s first and largest digital marketplace for crypto
-            collectibles and non-fungible tokens (NFTs). Buy, sell, and discover
-            exclusive digital items.
+          The world's premier digital bazaar for unique crypto-collectibles and NFTs. Experience seamless transactions for one-of-a-kind digital assets. Explore, buy, and sell the most exclusive digital and physical items on the market.
           </p>
 
           <div className={Style.footer_social}>
-            <a href="#">
+            <a href="https://www.facebook.com/MBDFinancials">
               <TiSocialFacebook />
             </a>
-            <a href="#">
+            <a href="https://www.linkedin.com/company/mbdfinancials/">
               <TiSocialLinkedin />
             </a>
-            <a href="#">
+            <a href="https://twitter.com/MBDFinancials">
               <TiSocialTwitter />
             </a>
-            <a href="#">
+            <a href="https://www.youtube.com/channel/UCju8ObUSidjgEvevlXc9pVg">
               <TiSocialYoutube />
             </a>
-            <a href="#">
+            <a href="https://www.instagram.com/mbdfinancials/">
               <TiSocialInstagram />
             </a>
           </div>
@@ -70,8 +68,8 @@ const Footer = () => {
           </div>
           <div className={Style.subscribe_box_info}>
             <p>
-              Discover, collect, and sell extraordinary NFTs OpenSea is the
-              world first and largest NFT marketplace
+              Discover, collect, and sell extraordinary NFTs. MBD Boulevard is the
+              world's first AI integrated E-comm Marketplace.
             </p>
           </div>
         </div>

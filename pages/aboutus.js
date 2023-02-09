@@ -9,39 +9,39 @@ import images from "../img";
 const aboutus = () => {
   const founderArray = [
     {
-      name: "Niamh O'Shea",
-      position: "Co-founder and Chief Executive",
+      name: "Fred Dahl",
+      position: "Founder and CEO",
       images: images.founder1,
     },
     {
-      name: "Danien Jame",
-      position: "Co-founder and Chief Executive",
+      name: "May Mahboob",
+      position: "Co-founder and President",
       images: images.founder2,
     },
     {
-      name: "Orla Dwyer",
-      position: "Co-founder, Chairman",
+      name: "OV",
+      position: "CMO",
       images: images.founder3,
     },
     {
-      name: "Dara Frazier",
-      position: "Co-Founder, Chief Strategy Officer",
+      name: "Usama Latif",
+      position: "Full-Stack Developer",
       images: images.founder4,
     },
   ];
 
   const factsArray = [
     {
-      title: "10 million",
-      info: "Articles have been public around the world (as of Sept. 30, 2021)",
+      title: "Accessibility",
+      info: "Allows for fluid movement of NFTs, regardless of their native network. Any singular NFT can be accessible on any chain, and users will also be able to transact with their NFTs directly cross-chain. Users will also be able to mint NFTs using the NFT trade platform.",
     },
     {
-      title: "100,000",
-      info: "Registered users account (as of Sept. 30, 2021)",
+      title: "Trading",
+      info: "Means that users will be able to trade directly with each other, without the need of an intermediary,using smart contracts to guarantee that both parties are satisfied with the transaction.",
     },
     {
-      title: "220+",
-      info: "Countries and regions have our presence (as of Sept. 30, 2021",
+      title: "Rewards",
+      info: "Users will be able share their NFTs, interact with other users and collectors, and create using their assets. Loyalty and token programs allow new forms of engagement for businesses. Rewards services allow users to earn and spend points.",
     },
   ];
   return (
@@ -51,9 +51,15 @@ const aboutus = () => {
           <div className={Style.aboutus_box_hero_left}>
             <h1>👋 About Us.</h1>
             <p>
-              We’re impartial and independent, and every day we create
-              distinctive, world-class programmes and content which inform,
-              educate and entertain millions of people in the around the world.
+              MBD Boulevard goes beyond the traditional
+              marketplace model by offering a wide range of
+              goods and services. There are several platforms
+              for trading art-based NFTs, but fewer for real
+              world goods, services, and loyalty programs.
+              Imagine a platform where Fiverr, Etsy, and
+              Amazon are all available in one place, anyone
+              can set up their own store, and transactions
+              occur instantaneously and securely.
             </p>
           </div>
           <div className={Style.aboutus_box_hero_right}>
@@ -62,10 +68,9 @@ const aboutus = () => {
         </div>
 
         <div className={Style.aboutus_box_title}>
-          <h2>⛱ Founder</h2>
+          <h2>⛱ Team</h2>
           <p>
-            We’re impartial and independent, and every day we create
-            distinctive, world-class programmes and content
+          Our team is dedicated to serving the community with transparency in all that we do.
           </p>
         </div>
 
@@ -90,8 +95,9 @@ const aboutus = () => {
         <div className={Style.aboutus_box_title}>
           <h2>🚀 Fast Facts</h2>
           <p>
-            We’re impartial and independent, and every day we create
-            distinctive, world-class programmes and content
+            “We are building a more diverse and equitable marketplace, with the opportunity for both
+            buyers and sellers to consume products in a new way. We are excited to offer the tools for
+            people all over the world to expand their business pursuits.”
           </p>
         </div>
 

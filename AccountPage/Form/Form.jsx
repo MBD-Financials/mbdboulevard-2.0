@@ -20,7 +20,7 @@ const Form = () => {
             <label htmlFor="name">Username</label>
             <input
               type="text"
-              placeholder="shoaib bhai"
+              placeholder="Captain F Harlock"
               className={Style.Form_box_input_userName}
             />
           </div>
@@ -64,7 +64,7 @@ const Form = () => {
                 <div className={Style.Form_box_input_box_icon}>
                   <TiSocialFacebook />
                 </div>
-                <input type="text" placeholder="http://shoaib" />
+                <input type="text" placeholder="https://www.facebook.com/MBDFinancials" />
               </div>
             </div>
             <div className={Style.Form_box_input}>
@@ -73,7 +73,7 @@ const Form = () => {
                 <div className={Style.Form_box_input_box_icon}>
                   <TiSocialTwitter />
                 </div>
-                <input type="text" placeholder="http://shoaib" />
+                <input type="text" placeholder="https://twitter.com/MBDFinancials" />
               </div>
             </div>
             <div className={Style.Form_box_input}>
@@ -82,7 +82,7 @@ const Form = () => {
                 <div className={Style.Form_box_input_box_icon}>
                   <TiSocialInstagram />
                 </div>
-                <input type="text" placeholder="http://shoaib" />
+                <input type="text" placeholder="https://www.instagram.com/mbdfinancials/" />
               </div>
             </div>
           </div>
@@ -95,7 +95,7 @@ const Form = () => {
               </div>
               <input
                 type="text"
-                placeholder="0xEA674fdDe714fd979de3EdF0F56AA9716B898ec8"
+                placeholder="0x5F5FE741A43E9A2b9e4BC31583F71e15eba30ef9"
               />
               <div className={Style.Form_box_input_box_icon}>
                 <MdOutlineContentCopy />
