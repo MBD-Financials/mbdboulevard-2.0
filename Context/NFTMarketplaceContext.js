@@ -171,7 +171,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       router.push("/searchPage");
       console.log("NFT CREATED");
     } catch (error) {
-      setError("Error while creating NFT");
+      setError("Error while minting NFT");
       
       setOpenError(true);
     }
@@ -407,6 +407,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
   const createUser = async (walletaddress) => {
     try{
+      console.log("GETTING WALLET ADDRESS")
       console.log(walletaddress);
       await axios.post('http://127.0.0.1:4001/api/v1/users/createuser', {
         username:walletaddress,
