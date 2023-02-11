@@ -5,14 +5,13 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import { create as ipfsHttpClient } from "ipfs-http-client";
 
-
-const projectId = "2L3cPfPpA7u2ZzDcM9k3SPwDZX5"//process.env.PROJECT_ID;
-const projectSecretKey = "72653b2d4895e2ef37a8f3e628c8579c"//process.env.PROJECT_SECRET_KEY;
+const projectId = "2L3cPfPpA7u2ZzDcM9k3SPwDZX5"; //process.env.PROJECT_ID;
+const projectSecretKey = "72653b2d4895e2ef37a8f3e628c8579c"; //process.env.PROJECT_SECRET_KEY;
 const auth = `Basic ${Buffer.from(`${projectId}:${projectSecretKey}`).toString(
   "base64"
 )}`;
 
-const subdomain = "https://fullstacknftmarketplace.infura-ipfs.io"//process.env.SUBDOMAIN;
+const subdomain = "https://fullstacknftmarketplace.infura-ipfs.io"; //process.env.SUBDOMAIN;
 
 const client = ipfsHttpClient({
   host: "infura-ipfs.io",
@@ -88,6 +87,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
   const [transactionCount, setTransactionCount] = useState("");
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [isUserCreated, setIsUserCreated] = useState(false);
   const router = useRouter();
 
   //---CHECK IF WALLET IS CONNECTD
@@ -112,7 +112,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
         setError("No Account Found");
         // setOpenError(true);
       }
-      
     } catch (error) {
       setError("Something wrong while connecting to wallet");
       // setOpenError(true);
@@ -124,6 +123,10 @@ export const NFTMarketplaceProvider = ({ children }) => {
     // connectingWithSmartContract();
   }, []);
 
+  useEffect(() => {
+    getUser();
+   }, [currentAccount]);
+
   //---CONNET WALLET FUNCTION
   const connectWallet = async () => {
     try {
@@ -134,8 +137,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
         method: "eth_requestAccounts",
       });
       setCurrentAccount(accounts[0]);
-      createUser(currentAccount);
-      // window.location.reload();
+      window.location.reload();
     } catch (error) {
       setError("Error while connecting to wallet");
       setOpenError(true);
@@ -167,12 +169,12 @@ export const NFTMarketplaceProvider = ({ children }) => {
       const url = `https://infura-ipfs.io/ipfs/${added.path}`;
 
       await createSale(url, price);
-      createNFTDB(name,parseFloat(price),description,image,currentAccount)
+      createNFTDB(name, parseFloat(price), description, image, currentAccount);
       router.push("/searchPage");
       console.log("NFT CREATED");
     } catch (error) {
       setError("Error while minting NFT");
-      
+
       setOpenError(true);
     }
   };
@@ -189,11 +191,11 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
       const transaction = !isReselling
         ? await contract.createToken(url, price, {
-            value: listingPrice.toString(),
-          })
+          value: listingPrice.toString(),
+        })
         : await contract.resellToken(id, price, {
-            value: listingPrice.toString(),
-          });
+          value: listingPrice.toString(),
+        });
 
       await transaction.wait();
       console.log(transaction);
@@ -215,13 +217,13 @@ export const NFTMarketplaceProvider = ({ children }) => {
         const contract = fetchContract(provider);
 
         const data = await contract.fetchMarketItems();
-        
+
         const items = await Promise.all(
           data.map(
             async ({ tokenId, seller, owner, price: unformattedPrice }) => {
               const tokenURI = await contract.tokenURI(tokenId);
-              var tokenSplit = tokenURI.split('/').pop()
-              const tokenURISend = `https://ipfs.io/ipfs/${tokenSplit}`
+              var tokenSplit = tokenURI.split("/").pop();
+              const tokenURISend = `https://ipfs.io/ipfs/${tokenSplit}`;
               const {
                 data: { image, name, description },
               } = await axios.get(tokenURISend);
@@ -243,8 +245,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
             }
           )
         );
-
-        console.log(items);
         return items;
       }
     } catch (error) {
@@ -262,7 +262,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
   //--FETCHING MY NFT OR LISTED NFTs
   const fetchMyNFTsOrListedNFTs = async (type) => {
-
     try {
       if (currentAccount) {
         const contract = await connectingWithSmartContract();
@@ -277,8 +276,8 @@ export const NFTMarketplaceProvider = ({ children }) => {
             async ({ tokenId, seller, owner, price: unformattedPrice }) => {
               const tokenURI = await contract.tokenURI(tokenId);
 
-              var tokenSplit = tokenURI.split('/').pop()
-              const tokenURISend = `https://ipfs.io/ipfs/${tokenSplit}`
+              var tokenSplit = tokenURI.split("/").pop();
+              const tokenURISend = `https://ipfs.io/ipfs/${tokenSplit}`;
               const {
                 data: { image, name, description },
               } = await axios.get(tokenURISend);
@@ -302,7 +301,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
           )
         );
         return items;
-        
       }
     } catch (error) {
       setError("Error while fetching listed NFTs");
@@ -334,7 +332,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
   //------------------------------------------------------------------
   //---TRANSFER FUNDS
-  
 
   const transferEther = async (address, ether, message) => {
     try {
@@ -405,50 +402,61 @@ export const NFTMarketplaceProvider = ({ children }) => {
     }
   };
 
-  const createUser = async (walletaddress) => {
-    try{
-      console.log("GETTING WALLET ADDRESS")
-      console.log(walletaddress);
-      await axios.post('http://127.0.0.1:4001/api/v1/users/createuser', {
-        username:walletaddress,
-        walletaddress:walletaddress
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    }
-    catch{
-      console.log("Error during creating nft")
+  const createUser = async () => {
+    try {
+      await axios
+        .post("http://127.0.0.1:4001/api/v1/users/createuser", {
+          username: currentAccount,
+          walletaddress: currentAccount,
+        })
+        .then(function (response) {
+        })
+        .catch(function (error) {
+        });
+    } catch {
+      console.log("Error during creating user");
     }
   };
 
-  const createNFTDB = async (name,price,description,image,owner) => {
-    try{
-      await axios.post('http://127.0.0.1:4001/api/v1/nfts/createnft', 
-      {
-        name:name,
-        price:price,
-        description:description,
-        image:image,
-        owner:owner
-      }
-      )
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    }
-    catch{
-      console.log("Error during creating nft")
+  const createNFTDB = async (name, price, description, image, owner) => {
+    try {
+      await axios
+        .post("http://127.0.0.1:4001/api/v1/nfts/createnft", {
+          name: name,
+          price: price,
+          description: description,
+          image: image,
+          owner: owner,
+        })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    } catch {
+      console.log("Error during creating nft");
     }
   };
 
-
+  const getUser = async () => {
+    try {
+      await axios
+        .get("http://127.0.0.1:4001/api/v1/users/getuser/"+currentAccount,{
+        })
+        .then(function (response) {
+          if (response.data.status === "success" ){
+            if (response.data.data.user.length == 0){
+              createUser();
+            } 
+          }
+        })
+        .catch(function (error) {
+        });
+    } catch {
+      console.log("Error during getting user");
+    }
+  };
 
   return (
     <NFTMarketplaceContext.Provider
@@ -471,7 +479,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
         loading,
         accountBalance,
         transactionCount,
-        transactions
+        transactions,
       }}
     >
       {children}
