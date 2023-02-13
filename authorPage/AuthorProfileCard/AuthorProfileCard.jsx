@@ -52,7 +52,19 @@ const AuthorProfileCard = ({ currentAccount, user}) => {
   return (
     <div className={Style.AuthorProfileCard}>
       <div className={Style.AuthorProfileCard_box}>
-        <div className={Style.AuthorProfileCard_box_img}>
+        
+        {(user.photo)?
+          <div className={Style.AuthorProfileCard_box_img}>
+          <Image
+            src={user.photo}
+            className={Style.AuthorProfileCard_box_img_img}
+            alt="NFT IMAGES"
+            width={220}
+            height={220}
+          />
+        </div>
+        :(
+          <div className={Style.AuthorProfileCard_box_img}>
           <Image
             src={images.nft_image_1}
             className={Style.AuthorProfileCard_box_img_img}
@@ -61,6 +73,8 @@ const AuthorProfileCard = ({ currentAccount, user}) => {
             height={220}
           />
         </div>
+        )}
+          
 
         <div className={Style.AuthorProfileCard_box_info}>
           <h2>

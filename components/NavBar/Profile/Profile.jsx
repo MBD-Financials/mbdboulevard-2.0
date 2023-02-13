@@ -13,13 +13,25 @@ const Profile = ({ currentAccount, user }) => {
   return (
     <div className={Style.profile}>
       <div className={Style.profile_account}>
-        <Image
-          src={images.user1}
-          alt="user profile"
-          width={50}
-          height={50}
-          className={Style.profile_account_img}
-        />
+      {(user.photo)?
+          <Image
+            src={user.photo}
+            alt="user profile"
+            width={50}
+            height={50}
+            className={Style.profile_account_img}
+          />
+              :
+          <Image
+            src={images.user1}
+            alt="user profile"
+            width={50}
+            height={50}
+            className={Style.profile_account_img}
+          />
+              
+            }
+        
 
         <div className={Style.profile_account_info}>
           <p>{user.username}</p>

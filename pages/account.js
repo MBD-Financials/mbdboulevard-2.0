@@ -9,7 +9,7 @@ import Form from "../AccountPage/Form/Form";
 import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
 
 const account = () => {
-  const { user,updateUser,currentAccount, uploadToIPFS } = useContext(
+  const { user,updateUser, uploadToIPFS } = useContext(
     NFTMarketplaceContext
   );
   const [fileUrl, setFileUrl] = useState(null);
@@ -19,13 +19,6 @@ const account = () => {
     console.log(url);
   }, []);
 
-
-  // const onDrop = useCallback(async (acceptedFile) => {
-  //   const url = await uploadToIPFS(acceptedFile[0]);
-  //   setFileUrl(url);
-  //   setImage(url);
-  //   console.log(url);
-  // });
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
@@ -46,7 +39,18 @@ const account = () => {
       <div className={Style.account_box}>
         <div className={Style.account_box_img} {...getRootProps()}>
           <input {...getInputProps()} />
-          {/* {(condition)?div:div} */}
+          {(user.photo)?
+          
+          <div>
+            <Image
+              src={user.photo}
+              alt="account upload"
+              width={150}
+              height={150}
+              className={Style.account_box_img_img}
+            />
+          </div>
+          :
           <div>
             <Image
               src={images.user1}
@@ -56,11 +60,11 @@ const account = () => {
               className={Style.account_box_img_img}
             />
           </div>
-          
+          }
           <p className={Style.account_box_img_para}>Change Image</p>
         </div>
         <div className={Style.account_box_from}>
-          <Form user={user} updateUser={updateUser} currentAccount={currentAccount}/>
+          <Form user={user} updateUser={updateUser} fileUrl={fileUrl}/>
         </div>
       </div>
     </div>

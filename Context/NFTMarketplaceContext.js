@@ -458,7 +458,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
 		}
 	};
 
-	const updateUser = async (username, email, website, bio) => {
+	const updateUser = async (username, email, website, bio,fileUri) => {
 		try {
 			await axios
 				.patch(
@@ -468,6 +468,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
 						email: email,
 						website: website,
 						bio: bio,
+            photo:fileUri
 					}
 				)
 				.then(function (response) {})

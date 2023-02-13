@@ -12,21 +12,28 @@ import Style from "./Form.module.css";
 import { Button } from "../../components/componentsindex.js";
 
 
-const Form = ({user,updateUser,currentAccount}) => {
+const Form = ({user,updateUser,fileUrl}) => {
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [bio, setBio] = useState("");
   const [website, setWebsite] = useState("")
+  const [imageURI, setImageURI] = useState(null)
   const updateUserInfo = async () =>{
-    await updateUser(username,email,website,bio)
+    await updateUser(username,email,website,bio,fileUrl)
   }
   useEffect(()=>{
 	setUsername(user.username);
 	setEmail(user.email);
 	setBio(user.bio);
 	setWebsite(user.website);
+	setImageURI(user.photo);
   },[user])
+
+  useEffect(()=>{
+	setImageURI(fileUrl);
+	console.log(imageURI);
+  },[fileUrl])
 
 	return (
 		<div className={Style.Form}>

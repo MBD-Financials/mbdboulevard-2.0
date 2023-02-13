@@ -24,7 +24,6 @@ const NavBar = () => {
   const [notification, setNotification] = useState(false);
   const [profile, setProfile] = useState(false);
   const [openSideMenu, setOpenSideMenu] = useState(false);
-
   const router = useRouter();
 
   const openMenu = (e) => {
@@ -152,6 +151,16 @@ const NavBar = () => {
 
           <div className={Style.navbar_container_right_profile_box}>
             <div className={Style.navbar_container_right_profile}>
+            {(user.photo)?
+              <Image
+                src={user.photo}
+                alt="Profile"
+                width={40}
+                height={40}
+                onClick={() => openProfile()}
+                className={Style.navbar_container_right_profile}
+              />
+              :
               <Image
                 src={images.user1}
                 alt="Profile"
@@ -160,7 +169,7 @@ const NavBar = () => {
                 onClick={() => openProfile()}
                 className={Style.navbar_container_right_profile}
               />
-
+            }
               {profile && <Profile currentAccount={currentAccount} user = {user} />}
             </div>
           </div>
