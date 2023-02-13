@@ -95,7 +95,7 @@ const NavBar = () => {
                 height={40}
                 onClick={() => router.push("/")}
                 className={Style.navbar_container_right_profile}
-              />
+            />
           </div>
           <div className={Style.navbar_container_left_box_input}>
             <div className={Style.navbar_container_left_box_input_box}>

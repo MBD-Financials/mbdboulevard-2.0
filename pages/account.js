@@ -14,9 +14,9 @@ const account = () => {
   );
   const [fileUrl, setFileUrl] = useState(null);
   const onDrop = useCallback(async (acceptedFile) => {
-    // const url = await uploadToIPFS(acceptedFile[0]);
-    setFileUrl(acceptedFile[0]);
-    console.log(acceptedFile[0]);
+    const url = await uploadToIPFS(acceptedFile[0]);
+    setFileUrl(url);
+    console.log(url);
   }, []);
 
 
