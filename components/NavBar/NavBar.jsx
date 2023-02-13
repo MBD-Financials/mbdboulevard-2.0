@@ -78,7 +78,7 @@ const NavBar = () => {
   };
 
   //SMART CONTRACT SECTION
-  const { currentAccount, connectWallet, openError } = useContext(
+  const { currentAccount, connectWallet, openError, user} = useContext(
     NFTMarketplaceContext
   );
 
@@ -87,7 +87,15 @@ const NavBar = () => {
       <div className={Style.navbar_container}>
         <div className={Style.navbar_container_left}>
           <div className={Style.logo}>
-            <DiJqueryLogo onClick={() => router.push("/")} />
+            {/* <DiJqueryLogo onClick={() => router.push("/")} /> */}
+            <Image
+                src={images.logoHome}
+                alt="Profile"
+                width={40}
+                height={40}
+                onClick={() => router.push("/")}
+                className={Style.navbar_container_right_profile}
+              />
           </div>
           <div className={Style.navbar_container_left_box_input}>
             <div className={Style.navbar_container_left_box_input_box}>
@@ -153,7 +161,7 @@ const NavBar = () => {
                 className={Style.navbar_container_right_profile}
               />
 
-              {profile && <Profile currentAccount={currentAccount} />}
+              {profile && <Profile currentAccount={currentAccount} user = {user} />}
             </div>
           </div>
 

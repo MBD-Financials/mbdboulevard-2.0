@@ -56,7 +56,7 @@ const author = () => {
   const [following, setFollowing] = useState(false);
 
   //IMPORT SMART CONTRACT DATA
-  const { fetchMyNFTsOrListedNFTs,checkIfWalletConnected ,currentAccount } = useContext(
+  const { fetchMyNFTsOrListedNFTs, checkIfWalletConnected, currentAccount, user} = useContext(
     NFTMarketplaceContext
   );
 
@@ -92,7 +92,7 @@ const author = () => {
   return (
     <div className={Style.author}>
       <Banner bannerImage={images.creatorbackground2} />
-      <AuthorProfileCard currentAccount={currentAccount} />
+      <AuthorProfileCard currentAccount={currentAccount} user ={user} />
       <AuthorTaps
         setCollectiables={setCollectiables}
         setCreated={setCreated}

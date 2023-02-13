@@ -38,8 +38,8 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
       link: "searchPage",
     },
     {
-      name: "Author Profile",
-      link: "author",
+      name: "Profile",
+      link: "profile",
     },
     {
       name: "NFT Details",

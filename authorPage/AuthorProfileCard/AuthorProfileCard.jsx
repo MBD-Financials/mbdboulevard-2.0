@@ -19,7 +19,7 @@ import Style from "./AuthorProfileCard.module.css";
 import images from "../../img";
 import { Button } from "../../components/componentsindex.js";
 
-const AuthorProfileCard = ({ currentAccount }) => {
+const AuthorProfileCard = ({ currentAccount, user}) => {
   const [share, setShare] = useState(false);
   const [report, setReport] = useState(false);
 
@@ -64,7 +64,7 @@ const AuthorProfileCard = ({ currentAccount }) => {
 
         <div className={Style.AuthorProfileCard_box_info}>
           <h2>
-            Dony Herrera{""}{" "}
+            {user.username}{""}{" "}
             <span>
               <MdVerified />
             </span>{" "}
@@ -79,8 +79,7 @@ const AuthorProfileCard = ({ currentAccount }) => {
           </div>
 
           <p>
-            Punk #4786 / An OG Cryptopunk Collector, hoarder of NFTs.
-            Contributing to @ether_cards, an NFT Monetization Platform.
+            {user.bio}
           </p>
 
           <div className={Style.AuthorProfileCard_box_info_social}>

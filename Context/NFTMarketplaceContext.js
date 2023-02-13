@@ -87,7 +87,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
   const [transactionCount, setTransactionCount] = useState("");
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [isUserCreated, setIsUserCreated] = useState(false);
+  const [user,setUser] = useState({});
   const router = useRouter();
 
   //---CHECK IF WALLET IS CONNECTD
@@ -101,7 +101,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       });
 
       if (accounts.length) {
-        setCurrentAccount(accounts[0]);
+        setCurrentAccount(accounts[0].toLowerCase());
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const getBalance = await provider.getBalance(accounts[0]);
         const bal = ethers.utils.formatEther(getBalance);
@@ -136,7 +136,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       const accounts = await window.ethereum.request({
         method: "eth_requestAccounts",
       });
-      setCurrentAccount(accounts[0]);
+      setCurrentAccount(accounts[0].toLowerCase());
       window.location.reload();
     } catch (error) {
       setError("Error while connecting to wallet");
@@ -406,7 +406,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
     try {
       await axios
         .post("http://127.0.0.1:4001/api/v1/users/createuser", {
-          username: currentAccount,
+          username: currentAccount.slice(0,7),
           walletaddress: currentAccount,
         })
         .then(function (response) {
@@ -448,13 +448,39 @@ export const NFTMarketplaceProvider = ({ children }) => {
           if (response.data.status === "success" ){
             if (response.data.data.user.length == 0){
               createUser();
+            }
+            else{
+              setUser(response.data.data.user[0]);
             } 
           }
         })
         .catch(function (error) {
+          console.log(error);
         });
     } catch {
       console.log("Error during getting user");
+    }
+  };
+
+
+  const updateUser = async(username,email,website,bio) => {
+    try {
+      await axios
+        .patch("http://127.0.0.1:4001/api/v1/users/updateuser/"+currentAccount, {
+          username: username,
+          email: email,
+          website:website,
+          bio:bio
+        })
+        .then(function (response) {
+        })
+        .catch(function (error) {
+          console.log(error);
+          setError(error);
+          openError(true);
+        });
+    } catch {
+      console.log("Error during creating user");
     }
   };
 
@@ -480,6 +506,8 @@ export const NFTMarketplaceProvider = ({ children }) => {
         accountBalance,
         transactionCount,
         transactions,
+        user,
+        updateUser
       }}
     >
       {children}

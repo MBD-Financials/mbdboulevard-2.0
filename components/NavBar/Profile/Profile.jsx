@@ -9,7 +9,7 @@ import Link from "next/link";
 import Style from "./Profile.module.css";
 import images from "../../../img";
 
-const Profile = ({ currentAccount }) => {
+const Profile = ({ currentAccount, user }) => {
   return (
     <div className={Style.profile}>
       <div className={Style.profile_account}>
@@ -22,7 +22,7 @@ const Profile = ({ currentAccount }) => {
         />
 
         <div className={Style.profile_account_info}>
-          <p>Cain </p>
+          <p>{user.username}</p>
           <small>{currentAccount.slice(0, 18)}..</small>
         </div>
       </div>
@@ -32,13 +32,13 @@ const Profile = ({ currentAccount }) => {
           <div className={Style.profile_menu_one_item}>
             <FaUserAlt />
             <p>
-              <Link href={{ pathname: "/author" }}>My Profile</Link>
+              <Link href={{ pathname: "/profile" }}>My Profile</Link>
             </p>
           </div>
           <div className={Style.profile_menu_one_item}>
             <FaRegImage />
             <p>
-              <Link href={{ pathname: "/author" }}>My Items</Link>
+              <Link href={{ pathname: "/profile" }}>My Items</Link>
             </p>
           </div>
           <div className={Style.profile_menu_one_item}>

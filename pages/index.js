@@ -38,7 +38,7 @@ const Home = () => {
       fetchNFTs().then((items) => {
         setNfts(items.reverse());
         setNftsCopy(items);
-        console.log(nfts);
+        // console.log(nfts);
       });
     }
   },[currentAccount]);
