@@ -9,13 +9,23 @@ import Form from "../AccountPage/Form/Form";
 import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
 
 const account = () => {
-  const { user,updateUser,currentAccount } = useContext(
+  const { user,updateUser,currentAccount, uploadToIPFS } = useContext(
     NFTMarketplaceContext
   );
   const [fileUrl, setFileUrl] = useState(null);
   const onDrop = useCallback(async (acceptedFile) => {
+    // const url = await uploadToIPFS(acceptedFile[0]);
     setFileUrl(acceptedFile[0]);
+    console.log(acceptedFile[0]);
   }, []);
+
+
+  // const onDrop = useCallback(async (acceptedFile) => {
+  //   const url = await uploadToIPFS(acceptedFile[0]);
+  //   setFileUrl(url);
+  //   setImage(url);
+  //   console.log(url);
+  // });
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
