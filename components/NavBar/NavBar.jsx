@@ -141,7 +141,7 @@ const NavBar = () => {
               <Button btnName="Connect" handleClick={() => connectWallet()} />
             ) : (
               <Button
-                btnName="Create"
+                btnName="Inventory"
                 handleClick={() => router.push("/uploadNFT")}
               />
             )}
