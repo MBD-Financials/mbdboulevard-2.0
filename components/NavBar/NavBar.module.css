@@ -16,6 +16,15 @@
     gap: 1rem;
 }
 
+.top_menu{
+    display: flex;
+    justify-content: space-between;
+}
+.top_menu_items{
+    display: flex;
+    margin-left: 0.5rem;
+}
+
 .navbar_container_left{
     display: grid;
     grid-template-columns: 1fr 2fr;

@@ -6,13 +6,11 @@ import { NFTMarketplaceProvider } from "../Context/NFTMarketplaceContext";
 
 
 const MyApp = ({ Component, pageProps }) => (
-  <div>
-    <NFTMarketplaceProvider>
+  <NFTMarketplaceProvider>
       <NavBar />
       <Component {...pageProps} />
       <Footer />
-    </NFTMarketplaceProvider>
-  </div>
+  </NFTMarketplaceProvider>
 );
 
 export default MyApp;

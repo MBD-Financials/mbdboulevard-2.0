@@ -89,20 +89,19 @@ const NavBar = () => {
 
   return (
     
-    <div className={Style.navbar}>
-      {/* <div className={Style.navbar_container}>
-      <nav class="flex justify-between">
-        <div class="flex items-center space-x-2 text-sm">
+    <div>
+        <nav className="flex justify-between">
+        <div className="flex items-center space-x-2 text-sm">
           {currentAccount ? (
-            <button className="">
-              Hi, {address.slice(0, 4) + "..." + address.slice(-4)}
+            <button className="connectWalletBtn">
+              Hi, {currentAccount.slice(0, 4) + "..." + currentAccount.slice(-4)}
             </button>
           ) : (
-            <button className="">
+            <button className="connectWalletBtn">
               Connect your wallet
             </button>
           )}
-        <p className="headerLink text-white">Help & Contact</p>
+          <p className="headerLink text-white">Help & Contact</p>
         </div>
 
         <div className="flex items-center space-x-4 text-sm">
@@ -127,122 +126,143 @@ const NavBar = () => {
           <ShoppingCartIcon className="text-white h-6 w-6" />
         </div>
       </nav>
-      </div> */}
+      
+      <hr />
+      
 
-      <div className={Style.navbar_container}>
-        <div className={Style.navbar_container_left}>
-          <div className={Style.logo}>
-            {/* <DiJqueryLogo onClick={() => router.push("/")} /> */}
-            <Image
-                src={images.logoHome}
-                alt="Profile"
-                width={40}
-                height={40}
-                onClick={() => router.push("/")}
-                className={Style.navbar_container_right_profile}
-            />
+      <div className={Style.navbar}>
+        <div className={Style.navbar_container}>
+          <div className={Style.navbar_container_left}>
+            <div className={Style.logo}>
+              {/* <DiJqueryLogo onClick={() => router.push("/")} /> */}
+              <Image
+                  src={images.logoHome}
+                  alt="Profile"
+                  width={40}
+                  height={40}
+                  onClick={() => router.push("/")}
+                  className={Style.navbar_container_right_profile}
+              />
+            </div>
+            <div className={Style.navbar_container_left_box_input}>
+              <div className={Style.navbar_container_left_box_input_box}>
+                <input type="text" placeholder="Search NFT" />
+                <BsSearch onClick={() => {}} className={Style.search_icon} />
+              </div>
+            </div>
           </div>
-          <div className={Style.navbar_container_left_box_input}>
-            <div className={Style.navbar_container_left_box_input_box}>
-              <input type="text" placeholder="Search NFT" />
-              <BsSearch onClick={() => {}} className={Style.search_icon} />
+
+          {/* //END OF LEFT SECTION */}
+          <div className={Style.navbar_container_right}>
+            <div className={Style.navbar_container_right_discover}>
+              {/* DISCOVER MENU */}
+              <p onClick={(e) => openMenu(e)}>Discover</p>
+              {discover && (
+                <div className={Style.navbar_container_right_discover_box}>
+                  <Discover />
+                </div>
+              )}
+            </div>
+
+            {/* HELP CENTER MENU */}
+            <div className={Style.navbar_container_right_help}>
+              <p onClick={(e) => openMenu(e)}>Help Center</p>
+              {help && (
+                <div className={Style.navbar_container_right_help_box}>
+                  <HelpCenter />
+                </div>
+              )}
+            </div>
+
+            {/* NOTIFICATION */}
+            <div className={Style.navbar_container_right_notify}>
+              <MdNotifications
+                className={Style.notify}
+                onClick={() => openNotification()}
+              />
+              {notification && <Notification />}
+            </div>
+
+            {/* CREATE BUTTON SECTION */}
+            <div className={Style.navbar_container_right_button}>
+              {currentAccount == "" ? (
+                <Button btnName="Connect" handleClick={() => connectWallet()} />
+              ) : (
+                <Button
+                  btnName="Inventory"
+                  handleClick={() => router.push("/uploadNFT")}
+                />
+              )}
+            </div>
+
+            {/* USER PROFILE */}
+
+            <div className={Style.navbar_container_right_profile_box}>
+              <div className={Style.navbar_container_right_profile}>
+              {(user.photo)?
+                <Image
+                  src={user.photo}
+                  alt="Profile"
+                  width={40}
+                  height={40}
+                  onClick={() => openProfile()}
+                  className={Style.navbar_container_right_profile}
+                />
+                :
+                <Image
+                  src={images.user1}
+                  alt="Profile"
+                  width={40}
+                  height={40}
+                  onClick={() => openProfile()}
+                  className={Style.navbar_container_right_profile}
+                />
+              }
+                {profile && <Profile currentAccount={currentAccount} user = {user} />}
+              </div>
+            </div>
+
+            {/* MENU BUTTON */}
+
+            <div className={Style.navbar_container_right_menuBtn}>
+              <CgMenuRight
+                className={Style.menuIcon}
+                onClick={() => openSideBar()}
+              />
             </div>
           </div>
         </div>
 
-        {/* //END OF LEFT SECTION */}
-        <div className={Style.navbar_container_right}>
-          <div className={Style.navbar_container_right_discover}>
-            {/* DISCOVER MENU */}
-            <p onClick={(e) => openMenu(e)}>Discover</p>
-            {discover && (
-              <div className={Style.navbar_container_right_discover_box}>
-                <Discover />
-              </div>
-            )}
-          </div>
-
-          {/* HELP CENTER MENU */}
-          <div className={Style.navbar_container_right_help}>
-            <p onClick={(e) => openMenu(e)}>Help Center</p>
-            {help && (
-              <div className={Style.navbar_container_right_help_box}>
-                <HelpCenter />
-              </div>
-            )}
-          </div>
-
-          {/* NOTIFICATION */}
-          <div className={Style.navbar_container_right_notify}>
-            <MdNotifications
-              className={Style.notify}
-              onClick={() => openNotification()}
-            />
-            {notification && <Notification />}
-          </div>
-
-          {/* CREATE BUTTON SECTION */}
-          <div className={Style.navbar_container_right_button}>
-            {currentAccount == "" ? (
-              <Button btnName="Connect" handleClick={() => connectWallet()} />
-            ) : (
-              <Button
-                btnName="Inventory"
-                handleClick={() => router.push("/uploadNFT")}
-              />
-            )}
-          </div>
-
-          {/* USER PROFILE */}
-
-          <div className={Style.navbar_container_right_profile_box}>
-            <div className={Style.navbar_container_right_profile}>
-            {(user.photo)?
-              <Image
-                src={user.photo}
-                alt="Profile"
-                width={40}
-                height={40}
-                onClick={() => openProfile()}
-                className={Style.navbar_container_right_profile}
-              />
-              :
-              <Image
-                src={images.user1}
-                alt="Profile"
-                width={40}
-                height={40}
-                onClick={() => openProfile()}
-                className={Style.navbar_container_right_profile}
-              />
-            }
-              {profile && <Profile currentAccount={currentAccount} user = {user} />}
-            </div>
-          </div>
-
-          {/* MENU BUTTON */}
-
-          <div className={Style.navbar_container_right_menuBtn}>
-            <CgMenuRight
-              className={Style.menuIcon}
-              onClick={() => openSideBar()}
+        {/* SIDBAR CPMPONE/NT */}
+        {openSideMenu && (
+          <div className={Style.sideBar}>
+            <SideBar
+              setOpenSideMenu={setOpenSideMenu}
+              currentAccount={currentAccount}
+              connectWallet={connectWallet}
             />
           </div>
-        </div>
+        )}
+
+        {openError && <Error />}
       </div>
-
-      {/* SIDBAR CPMPONE/NT */}
-      {openSideMenu && (
-        <div className={Style.sideBar}>
-          <SideBar
-            setOpenSideMenu={setOpenSideMenu}
-            currentAccount={currentAccount}
-            connectWallet={connectWallet}
-          />
-        </div>
-      )}
-
-      {openError && <Error />}
+      <hr />
+      <div>
+      <section className="flex py-3 space-x-6 text-xs md:text-sm whitespace-nowrap justify-center px-6">
+        <p className="link">Home</p>
+        <p className="link">Electronics</p>
+        <p className="link">Computers</p>
+        <p className="link hidden sm:inline">Video Games</p>
+        <p className="link hidden sm:inline">Home & Garden</p>
+        <p className="link hidden md:inline">Health & Beauty</p>
+        <p className="link hidden lg:inline">Collectibles and Art</p>
+        <p className="link hidden lg:inline">Books</p>
+        <p className="link hidden lg:inline">Music</p>
+        <p className="link hidden xl:inline">Deals</p>
+        <p className="link hidden xl:inline">Other</p>
+        <p className="link">More</p>
+      </section>
+      </div>
     </div>
   );
 };
