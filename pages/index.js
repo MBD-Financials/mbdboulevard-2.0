@@ -74,6 +74,7 @@ const Home = () => {
   return (
     <div className={Style.homePage}>
       <HeroSection />
+      
       <Service />
 
       <Title
@@ -88,7 +89,6 @@ const Home = () => {
       ) : (
         <FollowerTab TopCreator={creators} />
       )} */}
-
       <Title
         heading="Featured NFTs"
         paragraph="Discover the most outstanding NFTs in all topics of life."
@@ -102,13 +102,8 @@ const Home = () => {
         paragraph="Discover the most outstanding NFTs in all topics of life."
       />
       <AudioLive />
-      
 
-      <Slider />
-      
-      
-
-      
+      <Slider />  
       {/* <Subscribe /> */}
       <Brand />
       {/* <Video />  */}

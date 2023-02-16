@@ -13,6 +13,12 @@ import Style from "./NavBar.module.css";
 import { Discover, HelpCenter, Notification, Profile, SideBar } from "./index";
 import { Button, Error } from "../componentsindex";
 import images from "../../img";
+import {
+  BellIcon,
+  ShoppingCartIcon,
+  ChevronDownIcon,
+  MagnifyingGlassIcon,
+} from "@heroicons/react/24/outline";
 
 //IMPORT FROM SMART CONTRACT
 import { NFTMarketplaceContext } from "../../Context/NFTMarketplaceContext";
@@ -82,7 +88,47 @@ const NavBar = () => {
   );
 
   return (
+    
     <div className={Style.navbar}>
+      {/* <div className={Style.navbar_container}>
+      <nav class="flex justify-between">
+        <div class="flex items-center space-x-2 text-sm">
+          {currentAccount ? (
+            <button className="">
+              Hi, {address.slice(0, 4) + "..." + address.slice(-4)}
+            </button>
+          ) : (
+            <button className="">
+              Connect your wallet
+            </button>
+          )}
+        <p className="headerLink text-white">Help & Contact</p>
+        </div>
+
+        <div className="flex items-center space-x-4 text-sm">
+        <p className="headerLink text-white">Pricing </p>
+        <p className="headerLink text-white">MBD Gemz </p>
+      
+        <a href="https://mbdsend.netlify.app/" className="headerLink text-white flex items-center hover:link">
+            Send Crypto
+          <ChevronDownIcon className="h-4" />
+          </a>
+        <a href="https://aistudio.netlify.app/" className="headerLink text-white flex items-center hover:link">
+            AI Studio
+          <ChevronDownIcon className="h-4" />
+        </a>
+        
+          <Link href="/addItem" className="text-white flex items-center hover:link">
+            Add to inventory
+            <ChevronDownIcon className="h-4" />
+          </Link>
+
+          <BellIcon className="text-white h-6 w-6" />
+          <ShoppingCartIcon className="text-white h-6 w-6" />
+        </div>
+      </nav>
+      </div> */}
+
       <div className={Style.navbar_container}>
         <div className={Style.navbar_container_left}>
           <div className={Style.logo}>
