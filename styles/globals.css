@@ -7,7 +7,7 @@
 @layer components {
 
   .connectWalletBtn {
-      @apply bg-purple-500 text-white font-bold py-2 px-4 rounded cursor-pointer;
+      @apply bg-theme-pruple text-white font-bold py-2 px-4 rounded cursor-pointer;
   }
 
   .headerLink {
@@ -19,7 +19,7 @@
 
 /* //THEME 5 */
   :root{
-  --icons-color: #B901AF;
+  --icons-color: #ba00b1;
   --icons-light-color: #B901AF57;
   --icons-bg-color: #B901AF;
   --shadow-dark-color: #343334;

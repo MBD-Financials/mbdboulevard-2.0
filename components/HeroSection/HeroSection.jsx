@@ -17,8 +17,8 @@ const HeroSection = () => {
     <div className={Style.heroSection}>
       <div className={Style.heroSection_box}>
         <div className={Style.heroSection_box_left}>
-          <h1>{titleData} 🖼️</h1>
-          <p>
+          <h1 className="text-white">{titleData}</h1>
+          <p className="text-white mt-2">
             Discover the most outstanding NTFs in all topics of life. Creative
             your NTFs and sell them
           </p>

@@ -1,17 +1,17 @@
 import React, { useState, useEffect, useContext } from "react";
-import Wenb3Modal from "web3modal";
+import Web3Modal from "web3modal";
 import { ethers } from "ethers";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { create as ipfsHttpClient } from "ipfs-http-client";
 
-const projectId = "2L3cPfPpA7u2ZzDcM9k3SPwDZX5"; //process.env.PROJECT_ID;
-const projectSecretKey = "72653b2d4895e2ef37a8f3e628c8579c"; //process.env.PROJECT_SECRET_KEY;
+const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
+const projectSecretKey = process.env.NEXT_PUBLIC_PROJECT_SECRET_KEY;
 const auth = `Basic ${Buffer.from(`${projectId}:${projectSecretKey}`).toString(
 	"base64"
 )}`;
 
-const subdomain = "https://fullstacknftmarketplace.infura-ipfs.io"; //process.env.SUBDOMAIN;
+const subdomain = process.env.NEXT_PUBLIC_SUBDOMAIN;
 
 const client = ipfsHttpClient({
 	host: "infura-ipfs.io",
@@ -42,7 +42,7 @@ const fetchContract = (signerOrProvider) =>
 
 const connectingWithSmartContract = async () => {
 	try {
-		const web3Modal = new Wenb3Modal();
+		const web3Modal = new Web3Modal();
 		const connection = await web3Modal.connect();
 		const provider = new ethers.providers.Web3Provider(connection);
 		const signer = provider.getSigner();
@@ -137,7 +137,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
 				method: "eth_requestAccounts",
 			});
 			setCurrentAccount(accounts[0].toLowerCase());
-			window.location.reload();
+			// window.location.reload();
 		} catch (error) {
 			setError("Error while connecting to wallet");
 			setOpenError(true);
@@ -147,7 +147,9 @@ export const NFTMarketplaceProvider = ({ children }) => {
 	//---UPLOAD TO IPFS FUNCTION
 	const uploadToIPFS = async (file) => {
 		try {
+			console.log(projectId);
 			const added = await client.add({ content: file });
+			
 			const url = `${subdomain}/ipfs/${added.path}`;
 			return url;
 		} catch (error) {
