@@ -7,7 +7,7 @@ const Title = ({ heading, paragraph }) => {
   return (
     <div className={Style.title}>
       <div className={Style.title_box}>
-        <h2>{heading}</h2>
+        <h2 className="mb-10">{heading}</h2>
         <p>{paragraph}</p>
       </div>
     </div>

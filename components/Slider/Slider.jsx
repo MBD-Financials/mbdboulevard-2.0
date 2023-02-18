@@ -55,7 +55,7 @@ const Slider = () => {
   return (
     <div className={Style.slider}>
       <div className={Style.slider_box}>
-        <h2>Explore NFTs Video</h2>
+        <h2 className="mb-5">Explore NFTs Video</h2>
         <div className={Style.slider_box_button}>
           <p>Click on play icon & enjoy Nfts Video</p>
           <div className={Style.slider_box_button_btn}>

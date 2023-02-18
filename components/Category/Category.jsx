@@ -64,7 +64,7 @@ const Category = () => {
               alt="Background image"
               width={350}
               height={150}
-              objectFit="cover"
+              style={{objectFit:"cover"}}
             />
 
             <div className={Style.category_box_title}>
@@ -72,7 +72,7 @@ const Category = () => {
                 <BsCircleFill />
               </span>
               <div className={Style.category_box_title_info}>
-                <h4>{el.name}</h4>
+                <h4 className="mb-5 mt-5">{el.name}</h4>
                 <small>{i + 1}995 NFTS</small>
               </div>
             </div>

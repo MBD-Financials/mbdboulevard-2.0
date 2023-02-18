@@ -8,8 +8,9 @@ const Service = () => {
   return (
     <div className={Style.service}>
       <div className={Style.service_box}>
-        <div className={Style.service_box_item}>
+        <div>
           <Image
+            className="ml-20"
             src={images.service1}
             alt="Filter & Discover"
             width={100}
@@ -26,6 +27,7 @@ const Service = () => {
         </div>
         <div className={Style.service_box_item}>
           <Image
+            className="ml-20"
             src={images.service2}
             alt="Connect Wallet"
             width={100}
@@ -39,8 +41,9 @@ const Service = () => {
             Connect your Web3 wallet
           </p>
         </div>
-        <div className={Style.service_box_item}>
+        <div>
           <Image
+            className="ml-20"
             src={images.service3}
             alt="Mint"
             width={100}
@@ -54,8 +57,9 @@ const Service = () => {
             Simple steps to convert images/videos/audio/video to NFT
           </p>
         </div>
-        <div className={Style.service_box_item}>
+        <div>
           <Image
+            className="ml-20"
             src={images.service1}
             alt="Trade"
             width={100}
