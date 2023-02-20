@@ -7,25 +7,17 @@ import Style from "./Banner.module.css";
 const Banner = ({ bannerImage }) => {
   return (
     <div className={Style.banner}>
-      <div className={Style.banner_img}>
+      <div>
         <Image
+         className="object-fill h-80 w-96"
           src={bannerImage}
-          objectFit="cover"
           alt="background"
-          width={1600}
-          height={100}
+          // width={1000}
+          // height={100} 
+          
         />
       </div>
 
-      <div className={Style.banner_img_mobile}>
-        <Image
-          src={bannerImage}
-          objectFit="cover"
-          alt="background"
-          width={1600}
-          height={300}
-        />
-      </div>
     </div>
   );
 };

@@ -105,6 +105,7 @@
 
 .NFTDescription_box_profile_biding{
     margin-block: 1rem;
+    
 }
 
 .NFTDescription_box_profile_biding p{
@@ -112,6 +113,8 @@
     align-items: center;
     font-size: 1.5rem;
     gap: 1rem;
+    margin-bottom: 10px;
+    margin-top: 30px;
 }
 
 .NFTDescription_box_profile_biding_box_timer{
@@ -124,10 +127,13 @@
     font-size: 3rem;
     line-height: 0;
     font-weight: 900;
+    margin-top: 20px;
 }
 
 .NFTDescription_box_profile_biding_box_timer_item span{
     font-weight: 600;
+    margin-top: 20px;
+    line-height: 5;
 }
 
 .NFTDescription_box_profile_biding_box_price{
@@ -187,7 +193,7 @@
 }
 
 .NFTDescription_box_profile_biding_box_card{
-    margin-top: 2rem;
+    margin-top: 3rem;
     padding: 1rem;
 }
 

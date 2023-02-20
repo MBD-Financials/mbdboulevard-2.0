@@ -83,9 +83,9 @@ const aboutus = () => {
                   alt={el.name}
                   width={500}
                   height={500}
-                  className={Style.aboutus_box_founder_box_img_img}
+                  className="aspect-auto mb-3 rounded-2xl object-cover h-80 w-100"
                 />
-                <h3>{el.name}</h3>
+                <h3 className="text-2xl">{el.name}</h3>
                 <p>{el.position}</p>
               </div>
             ))}
@@ -106,7 +106,7 @@ const aboutus = () => {
             {factsArray.map((el, i) => (
               <div className={Style.aboutus_box_facts_box_info}>
                 <h3>{el.title}</h3>
-                <p>{el.info}</p>
+                <p className="text-l text-justify">{el.info}</p>
               </div>
             ))}
           </div>

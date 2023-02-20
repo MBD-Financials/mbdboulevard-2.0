@@ -28,7 +28,7 @@ const uploadNFT = () => {
           </p>
         </div>
 
-        <div className={Style.uploadNFT_box_form}>
+        <div className="box-content">
           <UploadNFT uploadToIPFS={uploadToIPFS} createNFT={createNFT}/>
         </div>
       </div>

@@ -24,11 +24,28 @@
     margin-bottom: 10rem;
 }
 
+.contactus_box_box_left_item_social{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.contactus_box_box_left_item_social p{
+    line-height: 1.2;
+    width: 80%;
+    font-size: 1rem;
+}
+
+
+.contactus_box_box_left_item_social a{
+    font-size: 1.5rem;
+    border-radius: 50%;
+    padding: .3rem;
+}
 .contactus_box_box_left_item p{
     line-height: 1.2;
     width: 80%;
     font-size: 1rem;
 }
+
 
 .contactus_box_box_left_item a{
     font-size: 1.5rem;

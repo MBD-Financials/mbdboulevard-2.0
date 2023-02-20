@@ -2,6 +2,7 @@
 
 .upload_box_input_para{
    padding: 0 1rem;
+   margin-top: 10px;
 }
 
 .upload_box_slider_div{
@@ -14,6 +15,7 @@
     border-radius: 1rem;
     padding: 1rem;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .upload_box_slider_box{

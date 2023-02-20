@@ -65,7 +65,7 @@ const Profile = ({ currentAccount, user }) => {
           </div>
         </div>
 
-        <div className={Style.profile_menu_two}>
+        {/* <div className={Style.profile_menu_two}>
           <div className={Style.profile_menu_one_item}>
             <MdHelpCenter />
             <p>
@@ -78,7 +78,7 @@ const Profile = ({ currentAccount, user }) => {
               <Link href={{ pathname: "/aboutus" }}>About Us</Link>
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

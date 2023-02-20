@@ -39,7 +39,7 @@ const NFTDescription = ({ nft }) => {
   const router = useRouter();
 
   const historyArray = [
-    images.user1,
+    images.user10,
     images.user2,
     images.user3,
     images.user4,
@@ -53,7 +53,7 @@ const NFTDescription = ({ nft }) => {
     images.user10,
   ];
   const ownerArray = [
-    images.user1,
+    images.user10,
     images.user8,
     images.user2,
     images.user6,
@@ -176,10 +176,10 @@ const NFTDescription = ({ nft }) => {
                 className={Style.NFTDescription_box_profile_box_left_img}
               />
               <div className={Style.NFTDescription_box_profile_box_left_info}>
-                <small>Creator</small> <br />
+                <small>Owner</small> <br />
                 <Link href={{ pathname: "/author", query: `${nft.seller}` }}>
                   <span>
-                    Karli Costa <MdVerified />
+                    MBD <MdVerified />
                   </span>
                 </Link>
               </div>
@@ -254,8 +254,6 @@ const NFTDescription = ({ nft }) => {
                   {nft.price} ETH <span>( ≈ $3,221.22)</span>
                 </p>
               </div>
-
-              <span>[96 in stock]</span>
             </div>
 
             <div className={Style.NFTDescription_box_profile_biding_box_button}>

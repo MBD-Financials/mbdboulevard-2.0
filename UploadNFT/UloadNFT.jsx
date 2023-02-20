@@ -76,7 +76,7 @@ const UloadNFT = ({ uploadToIPFS, createNFT}) => {
           <label htmlFor="nft">Item Name</label>
           <input
             type="text"
-            placeholder="Cain "
+            placeholder="MBD"
             className={formStyle.Form_box_input_userName}
             onChange={(e) => setName(e.target.value)}
           />
@@ -135,7 +135,7 @@ const UloadNFT = ({ uploadToIPFS, createNFT}) => {
                 onClick={() => (setActive(i + 1), setCategory(el.category))}
               >
                 <div className={Style.upload_box_slider_box}>
-                  <div className={Style.upload_box_slider_box_img}>
+                  <div >
                     <Image
                       src={el.image}
                       alt="background image"
@@ -148,7 +148,7 @@ const UloadNFT = ({ uploadToIPFS, createNFT}) => {
                     <TiTick />
                   </div>
                 </div>
-                <p>Crypto Legend - {el.category} </p>
+                <p className="mt-4">{el.category} </p>
               </div>
             ))}
           </div>
@@ -163,33 +163,21 @@ const UloadNFT = ({ uploadToIPFS, createNFT}) => {
               </div>
               <input
                 type="text"
-                placeholder="20%"
+                placeholder="20"
                 onChange={(e) => setRoyalties(e.target.value)}
               />
             </div>
           </div>
+          
           <div className={formStyle.Form_box_input}>
-            <label htmlFor="size">Size</label>
-            <div className={formStyle.Form_box_input_box}>
-              <div className={formStyle.Form_box_input_box_icon}>
-                <MdOutlineAttachFile />
-              </div>
-              <input
-                type="text"
-                placeholder="165MB"
-                onChange={(e) => setFileSize(e.target.value)}
-              />
-            </div>
-          </div>
-          <div className={formStyle.Form_box_input}>
-            <label htmlFor="Propertie">Propertie</label>
+            <label htmlFor="Propertie">Properties</label>
             <div className={formStyle.Form_box_input_box}>
               <div className={formStyle.Form_box_input_box_icon}>
                 <AiTwotonePropertySafety />
               </div>
               <input
                 type="text"
-                placeholder="Propertie"
+                placeholder="Properties"
                 onChange={(e) => setProperties(e.target.value)}
               />
             </div>

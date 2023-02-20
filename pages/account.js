@@ -53,7 +53,7 @@ const account = () => {
           :
           <div>
             <Image
-              src={images.user1}
+              src={images.user2}
               alt="account upload"
               width={150}
               height={150}

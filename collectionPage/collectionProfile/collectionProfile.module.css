@@ -56,7 +56,7 @@
 
 .collectionProfile_box_middle h1{
     font-size: 3rem;
-    line-height: 0;
+    line-height: 2;
 }
 
 .collectionProfile_box_middle p{
@@ -83,7 +83,7 @@
 
 .collectionProfile_box_middle_box_item p{
     font-size: 2rem;
-    line-height: 0;
+    line-height: 2;
 }
 
 .collectionProfile_box_middle_box_item small{

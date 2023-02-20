@@ -34,8 +34,9 @@ const contactus = () => {
               <h3>☎ PHONE</h3>
               <p>ET phone home</p>
             </div>
-            <div className={Style.contactus_box_box_left_item}>
-              <h3>🌏 SOCIALS</h3>
+            <div>
+              <h3 className="mt-5">🌏 SOCIALS</h3>
+              <div className={Style.contactus_box_box_left_item_social}>
               <a href="https://www.facebook.com/MBDFinancials">
                 <TiSocialFacebook />
               </a>
@@ -51,6 +52,7 @@ const contactus = () => {
               <a href="https://twitter.com/MBDFinancials">
                 <TiSocialTwitter />
               </a>
+              </div>
             </div>
           </div>
           <div className={Style.contactus_box_box_right}>
