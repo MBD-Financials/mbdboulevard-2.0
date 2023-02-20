@@ -44,13 +44,15 @@
     padding-inline: 2rem;
     line-height: 0;
     margin-top: 1rem;
-    text-align: end;
+    text-align: center;
 }
 
 .sliderCard_box_price_box{
     border: 1px solid var(--icons-color);
     padding: .2rem 1rem;
     border-radius: .2rem;
+    height:4rem;
+    width: 10rem;
 }
 
 .sliderCard_box_price_box small{
@@ -68,12 +70,15 @@
 }
 
 .sliderCard_box_price_time{
-    align-items: flex-end;
+    /* align-items: flex-end; */
     display: grid;
+    text-align: center;
+    margin-left: 25px;
+    margin-top: 10px;
 }
 
-.sliderCard_box_price_time p{
-    font-size: 1.3rem;
+.sliderCard_box_price_time pp{
+    font-size: 1.2rem;
     font-weight: 700;
 }
 
