@@ -39,20 +39,21 @@
 }
 
 .notification_box_img{
-    border-radius: 5rem;
+    border-radius: 100rem;
+    margin-top: -.8rem;
 }
 
 .notification_box_info{
-    line-height: 0;
     margin-top: -.8rem;
 }
 
 .notification_box_info h4{
     font-weight: 600;
+    /* margin-bottom: 1px; */
 }
 
-.notification_box_info p{
-    font-size: 15px;
+.notification_box_info pp{
+    font-size: 12px;
     line-height: .3;
     position: relative;
 }
@@ -62,6 +63,7 @@
     height: .5rem;
     border-radius: 50%;
     background-color: var(--icons-color);
+    /* margin-left: 50px; */
 }
 
 @media screen and (max-width: 35em) {

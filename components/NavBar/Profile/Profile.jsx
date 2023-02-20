@@ -23,7 +23,7 @@ const Profile = ({ currentAccount, user }) => {
           />
               :
           <Image
-            src={images.user1}
+            src={images.user2}
             alt="user profile"
             width={50}
             height={50}
@@ -33,14 +33,18 @@ const Profile = ({ currentAccount, user }) => {
             }
         
 
-        <div className={Style.profile_account_info}>
-          <p>{user.username}</p>
-          <small>{currentAccount.slice(0, 18)}..</small>
+        <div>
+          {(user.username)?
+            <p className="text-2xl">{user.username}</p>
+            :
+            <p className="text-2xl">DEV</p>}
+            
+            <p className="text-sm">{currentAccount.slice(0, 18)}..</p>
         </div>
       </div>
 
-      <div className={Style.profile_menu}>
-        <div className={Style.profile_menu_one}>
+      <div>
+        <div>
           <div className={Style.profile_menu_one_item}>
             <FaUserAlt />
             <p>

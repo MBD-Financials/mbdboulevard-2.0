@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext} from "react";
 import Image from "next/image";
 import { DiJqueryLogo } from "react-icons/di";
 //----IMPORT ICON
@@ -31,7 +31,7 @@ const NavBar = () => {
   const [profile, setProfile] = useState(false);
   const [openSideMenu, setOpenSideMenu] = useState(false);
   const router = useRouter();
-
+  
   const openMenu = (e) => {
     const btnText = e.target.innerText;
     if (btnText == "Discover") {
@@ -39,11 +39,13 @@ const NavBar = () => {
       setHelp(false);
       setNotification(false);
       setProfile(false);
+      openDiscover();
     } else if (btnText == "Help Center") {
       setDiscover(false);
       setHelp(true);
       setNotification(false);
       setProfile(false);
+      openHelpCenter();
     } else {
       setDiscover(false);
       setHelp(false);
@@ -71,6 +73,26 @@ const NavBar = () => {
       setNotification(false);
     } else {
       setProfile(false);
+    }
+  };
+  const openHelpCenter = () => {
+    if (!help) {
+      setProfile(false);
+      setHelp(true);
+      setDiscover(false);
+      setNotification(false);
+    } else {
+      setHelp(false);
+    }
+  };
+  const openDiscover = () => {
+    if (!discover) {
+      setProfile(false);
+      setHelp(false);
+      setDiscover(true);
+      setNotification(false);
+    } else {
+      setDiscover(false);
     }
   };
 
@@ -210,7 +232,7 @@ const NavBar = () => {
                 />
                 :
                 <Image
-                  src={images.user1}
+                  src={images.user2}
                   alt="Profile"
                   width={40}
                   height={40}

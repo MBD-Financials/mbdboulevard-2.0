@@ -12,17 +12,17 @@ const Notification = () => {
       <div className={Style.notification_box}>
         <div className={Style.notification_box_img}>
           <Image
-            src={images.user1}
+            src={images.user2}
             alt="profile image"
             width={50}
             height={50}
-            className={Style.notification_box_img}
+            className="rounded-full"
           />
         </div>
         <div className={Style.notification_box_info}>
           <h4>Cain Akhter</h4>
-          <p>Measure action your user...</p>
-          <small>3 minutes ago</small>
+          <pp>Measure action your user...</pp>
+          <p className="text-xs">3 minutes ago</p>
         </div>
         <span className={Style.notification_box_new}></span>
       </div>
