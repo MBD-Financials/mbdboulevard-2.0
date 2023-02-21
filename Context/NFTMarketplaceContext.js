@@ -10,7 +10,7 @@ const projectSecretKey = process.env.NEXT_PUBLIC_PROJECT_SECRET_KEY;
 const auth = `Basic ${Buffer.from(`${projectId}:${projectSecretKey}`).toString(
 	"base64"
 )}`;
-
+const URL = process.env.NEXT_PUBLIC_URL;
 const subdomain = process.env.NEXT_PUBLIC_SUBDOMAIN;
 
 const client = ipfsHttpClient({
@@ -407,7 +407,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
 	const createUser = async () => {
 		try {
 			await axios
-				.post("http://127.0.0.1:4002/api/v1/users/createuser", {
+				.post(URL+"api/v1/users/createuser", {
 					username: currentAccount.slice(0, 7),
 					walletaddress: currentAccount,
 				})
@@ -421,7 +421,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
 	const createNFTDB = async (name, price, description, image, owner) => {
 		try {
 			await axios
-				.post("http://127.0.0.1:4001/api/v1/nfts/createnft", {
+				.post(URL+"api/v1/nfts/createnft", {
 					name: name,
 					price: price,
 					description: description,
@@ -442,7 +442,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
 	const getUser = async () => {
 		try {
 			await axios
-				.get("http://127.0.0.1:4002/api/v1/users/getuser/" + currentAccount, {})
+				.get(URL+"api/v1/users/getuser/" + currentAccount, {})
 				.then(function (response) {
 					if (response.data.status === "success") {
 						if (response.data.data.user.length == 0) {
@@ -464,7 +464,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
 		try {
 			await axios
 				.patch(
-					"http://127.0.0.1:4002/api/v1/users/updateuser/" + currentAccount,
+					URL+"api/v1/users/updateuser/" + currentAccount,
 					{
 						username: username,
 						email: email,
