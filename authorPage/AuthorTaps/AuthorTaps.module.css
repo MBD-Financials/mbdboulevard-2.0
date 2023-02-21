@@ -50,6 +50,7 @@
     border: 1px solid var(--icons-color);
     border-radius: 2rem;
     width: 17.5rem;
+    height: 3rem;
     padding: 0 2rem;
     display: grid;
     align-items: center;
@@ -67,7 +68,7 @@
     background-color: var(--main-bg-color);
     padding: 1rem;
     width: 16rem;
-    left: -3rem;
+    /* left: -3rem; */
     position: absolute;
     border-radius: 1rem;
     margin-top: 1.5rem;
@@ -79,7 +80,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    line-height: 0;
+    line-height: 1;
     padding-right: 1rem;
 }
 
@@ -87,7 +88,9 @@
     transition:  all .3s ease-in;
     padding: 0 1rem;
     line-height: 1;
+    margin-bottom: 10px;
     cursor: pointer;
+    
 }
 
 .AuthorTaps_box_right_list_item:hover{

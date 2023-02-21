@@ -78,7 +78,7 @@ const AuthorProfileCard = ({ currentAccount, user}) => {
 
         <div className={Style.AuthorProfileCard_box_info}>
           <h2>
-            {user.username}{""}{" "}
+            {user.username}
             <span>
               <MdVerified />
             </span>{" "}
@@ -92,7 +92,7 @@ const AuthorProfileCard = ({ currentAccount, user}) => {
             />
           </div>
 
-          <p>
+          <p className="mt-2">
             {user.bio}
           </p>
 

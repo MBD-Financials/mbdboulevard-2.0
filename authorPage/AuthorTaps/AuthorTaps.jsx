@@ -95,7 +95,7 @@ const AuthorTaps = ({
             >
               Liked
             </button>
-            <button
+            {/* <button
               className={`${activeBtn == 4 ? Style.active : ""}`}
               onClick={(e) => openTab(e)}
             >
@@ -106,7 +106,7 @@ const AuthorTaps = ({
               onClick={(e) => openTab(e)}
             >
               Followers
-            </button>
+            </button> */}
           </div>
         </div>
 

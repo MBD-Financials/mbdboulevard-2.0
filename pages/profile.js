@@ -19,7 +19,7 @@ const author = () => {
   const followerArray = [
     {
       background: images.creatorbackground1,
-      user: images.user1,
+      user: images.user10,
       seller: "7d64gf748849j47fy488444",
     },
     {
@@ -110,7 +110,7 @@ const author = () => {
         nfts={nfts}
         myNFTS={myNFTs}
       />
-      <Title
+      {/* <Title
         heading="Popular Creators"
         paragraph="Click on music icon and enjoy NTF music or audio
 "
@@ -119,7 +119,7 @@ const author = () => {
         {followerArray.map((el, i) => (
           <FollowerTabCard i={i} el={el} />
         ))}
-      </div>
+      </div> */}
 
       <Brand />
     </div>
