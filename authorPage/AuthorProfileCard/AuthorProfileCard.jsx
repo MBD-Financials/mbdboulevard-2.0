@@ -19,10 +19,11 @@ import Style from "./AuthorProfileCard.module.css";
 import images from "../../img";
 import { Button } from "../../components/componentsindex.js";
 
+
+
 const AuthorProfileCard = ({ currentAccount, user}) => {
   const [share, setShare] = useState(false);
   const [report, setReport] = useState(false);
-
   //copyAddress function
   const copyAddress = () => {
     const copyText = document.getElementById("myInput");
@@ -113,7 +114,7 @@ const AuthorProfileCard = ({ currentAccount, user}) => {
         </div>
 
         <div className={Style.AuthorProfileCard_box_share}>
-          <Button btnName="Follow" handleClick={() => {}} />
+          <Button btnName="Follow" handleClick={()=>{}} />
           <MdCloudUpload
             onClick={() => openShare()}
             className={Style.AuthorProfileCard_box_share_icon}

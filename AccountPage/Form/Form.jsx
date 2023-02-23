@@ -32,7 +32,6 @@ const Form = ({user,updateUser,fileUrl}) => {
 
   useEffect(()=>{
 	setImageURI(fileUrl);
-	console.log(imageURI);
   },[fileUrl])
 
 	return (
@@ -55,13 +54,13 @@ const Form = ({user,updateUser,fileUrl}) => {
 						<div className={Style.Form_box_input_box}>
 							<div className={Style.Form_box_input_box_icon}>
 								<HiOutlineMail />
-							</div>
+						</div>
 							<input 
-                type="text" 
-                placeholder="Email" 
-                value = {email}
-                onChange={(e) => setEmail(e.target.value)}
-                />
+								type="text" 
+								placeholder="Email" 
+								value = {email}
+								onChange={(e) => setEmail(e.target.value)}
+                			/>
 						</div>
 					</div>
 
@@ -72,9 +71,9 @@ const Form = ({user,updateUser,fileUrl}) => {
 							id=""
 							cols="30"
 							rows="6"
-              value = {bio}
+              				value = {bio}
 							placeholder="something about yourself in few words"
-              onChange={(e) => setBio(e.target.value)}
+              				onChange={(e) => setBio(e.target.value)}
 						></textarea>
 					</div>
 
@@ -86,11 +85,11 @@ const Form = ({user,updateUser,fileUrl}) => {
 							</div>
 
 							<input 
-                type="text" 
-                placeholder="website" 
-                value={website}
-                onChange={(e) => setWebsite(e.target.value)}
-              />
+								type="text" 
+								placeholder="website" 
+								value={website}
+								onChange={(e) => setWebsite(e.target.value)}
+             				 />
 						</div>
 					</div>
 

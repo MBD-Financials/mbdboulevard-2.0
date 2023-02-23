@@ -39,8 +39,18 @@ const account = () => {
       <div className={Style.account_box}>
         <div className={Style.account_box_img} {...getRootProps()}>
           <input {...getInputProps()} />
-          {(user.photo)?
+          {(fileUrl)?
           
+          <div>
+          <Image
+              src={fileUrl}
+              alt="account upload"
+              width={150}
+              height={150}
+              className={Style.account_box_img_img}
+            />
+          </div>
+          :(user.photo)?
           <div>
             <Image
               src={user.photo}
@@ -50,6 +60,7 @@ const account = () => {
               className={Style.account_box_img_img}
             />
           </div>
+
           :
           <div>
             <Image

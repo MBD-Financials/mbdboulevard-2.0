@@ -147,7 +147,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
 	//---UPLOAD TO IPFS FUNCTION
 	const uploadToIPFS = async (file) => {
 		try {
-			console.log(projectId);
 			const added = await client.add({ content: file });
 			
 			const url = `${subdomain}/ipfs/${added.path}`;
@@ -461,7 +460,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
 	};
 
 	const updateUser = async (username, email, website, bio,fileUri) => {
-		try {
+		try {	
 			await axios
 				.patch(
 					URL+"api/v1/users/updateuser/" + currentAccount,
@@ -470,10 +469,12 @@ export const NFTMarketplaceProvider = ({ children }) => {
 						email: email,
 						website: website,
 						bio: bio,
-            photo:fileUri
+            			photo:fileUri
 					}
 				)
-				.then(function (response) {})
+				.then(function (response) {
+					console.log(response)
+				})
 				.catch(function (error) {
 					console.log(error);
 					setError(error);

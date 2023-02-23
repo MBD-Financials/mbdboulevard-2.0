@@ -56,13 +56,14 @@ const author = () => {
   const [following, setFollowing] = useState(false);
 
   //IMPORT SMART CONTRACT DATA
-  const { fetchMyNFTsOrListedNFTs, checkIfWalletConnected, currentAccount, user} = useContext(
+  const { fetchMyNFTsOrListedNFTs, checkIfWalletConnected, currentAccount, user, updateUser} = useContext(
     NFTMarketplaceContext
   );
 
   const [nfts, setNfts] = useState([]);
   const [myNFTs, setMyNFTs] = useState([]);
 
+  
   
   useEffect(() => {
     checkIfWalletConnected();
