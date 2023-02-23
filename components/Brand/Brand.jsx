@@ -15,15 +15,15 @@ const Brand = () => {
       <div className={Style.Brand_box}>
         <div className={Style.Brand_box_left}>
           {/* <Image src={images.logo} alt="brand logo" width={100} height={100} /> */}
-          <a href="/">
+          {/* <a href="/">
             <DiJqueryLogo className={Style.Brand_box_left_logo} />
-          </a>
+          </a> */}
           <h1 className="mb-5">Earn Gemz with MBD</h1>
           <p>A fully fletched rewards platform.</p>
 
           <div className={Style.Brand_box_left_btn}>
             <Button
-              btnName="Create"
+              btnName="Redeem"
               handleClick={() => router.push("/uploadNFT")}
             />
             <Button

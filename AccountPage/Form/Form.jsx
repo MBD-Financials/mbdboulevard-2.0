@@ -19,8 +19,14 @@ const Form = ({user,updateUser,fileUrl}) => {
   const [bio, setBio] = useState("");
   const [website, setWebsite] = useState("")
   const [imageURI, setImageURI] = useState(null)
+
   const updateUserInfo = async () =>{
-    await updateUser(username,email,website,bio,fileUrl)
+    const updatedUser = await updateUser(username,email,website,bio,imageURI);
+	// setUsername(updatedUser.username);
+	// setEmail(updatedUser.email);
+	// setBio(updatedUser.bio);
+	// setWebsite(updatedUser.website);
+	// setImageURI(updatedUser.photo);
   }
   useEffect(()=>{
 	setUsername(user.username);
@@ -37,7 +43,7 @@ const Form = ({user,updateUser,fileUrl}) => {
 	return (
 		<div className={Style.Form}>
 			<div className={Style.Form_box}>
-				<form>
+				<div>
 					<div className={Style.Form_box_input}>
 						<label htmlFor="name">Username</label>
 						<input
@@ -155,7 +161,7 @@ const Form = ({user,updateUser,fileUrl}) => {
 							classStyle={Style.button}
 						/>
 					</div>
-				</form>
+				</div>
 			</div>
 		</div>
 	);

@@ -28,7 +28,7 @@ const Subscription = ({ el, i }) => {
           ))}
         </div>
         <Button
-          btnName="Submit"
+          btnName="Buy"
           handleClick={() => {}}
           classStyle={Style.button}
         />

@@ -473,13 +473,16 @@ export const NFTMarketplaceProvider = ({ children }) => {
 					}
 				)
 				.then(function (response) {
-					console.log(response)
+					if (response.data.status === "success") {
+						setUser(response.data.data.user);
+					}
+					
 				})
 				.catch(function (error) {
-					console.log(error);
-					setError(error);
-					openError(true);
+					
 				});
+			return user;
+			
 		} catch {
 			console.log("Error during creating user");
 		}
