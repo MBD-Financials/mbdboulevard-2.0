@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { FaUserAlt, FaRegImage, FaUserEdit } from "react-icons/fa";
+import { FaUserAlt, FaRegImage, FaUserEdit,FaPlus } from "react-icons/fa";
 import { MdHelpCenter } from "react-icons/md";
 import { TbDownloadOff, TbDownload } from "react-icons/tb";
 import Link from "next/link";
@@ -61,6 +61,12 @@ const Profile = ({ currentAccount, user }) => {
             <FaUserEdit />
             <p>
               <Link href={{ pathname: "/account" }}>Edit Profile</Link>
+            </p>
+          </div>
+          <div className={Style.profile_menu_one_item}>
+            <FaPlus />
+            <p>
+              <Link href={{ pathname: "/uploadNFT" }}>Add to Inventory</Link>
             </p>
           </div>
         </div>

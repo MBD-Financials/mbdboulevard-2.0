@@ -58,6 +58,7 @@ import errorgif from "./error.gif";
 import transfer from "./transfer.gif";
 import transferEther from "./ethereTransfer.gif";
 import logoHome from "./mbd.jpg"
+import metaverse from "./metaverse.jpg"
 
 export default {
   logoHome,
@@ -120,4 +121,5 @@ export default {
   errorgif,
   transfer,
   transferEther,
+  metaverse
 };

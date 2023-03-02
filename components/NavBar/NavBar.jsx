@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 
 //INTERNAL IMPORT
 import Style from "./NavBar.module.css";
-import { Discover, HelpCenter, Notification, Profile, SideBar } from "./index";
+import { Discover, HelpCenter, Notification, Profile, SideBar, Merchant } from "./index";
 import { Button, Error } from "../componentsindex";
 import images from "../../img";
 import {
@@ -26,6 +26,7 @@ import { NFTMarketplaceContext } from "../../Context/NFTMarketplaceContext";
 const NavBar = () => {
   //----USESTATE COMPONNTS
   const [discover, setDiscover] = useState(false);
+  const [merchant, setMerchant] = useState(false);
   const [help, setHelp] = useState(false);
   const [notification, setNotification] = useState(false);
   const [profile, setProfile] = useState(false);
@@ -39,18 +40,28 @@ const NavBar = () => {
       setHelp(false);
       setNotification(false);
       setProfile(false);
+      setMerchant(false);
       openDiscover();
     } else if (btnText == "Help Center") {
       setDiscover(false);
       setHelp(true);
       setNotification(false);
       setProfile(false);
+      setMerchant(false);
       openHelpCenter();
-    } else {
+    } else if (btnText == "Merchant"){
       setDiscover(false);
       setHelp(false);
       setNotification(false);
       setProfile(false);
+      openMerchant();
+    }
+    else {
+      setDiscover(false);
+      setHelp(false);
+      setNotification(false);
+      setProfile(false);
+      setMerchant(false);
     }
   };
 
@@ -60,6 +71,7 @@ const NavBar = () => {
       setDiscover(false);
       setHelp(false);
       setProfile(false);
+      setMerchant(false);
     } else {
       setNotification(false);
     }
@@ -71,6 +83,7 @@ const NavBar = () => {
       setHelp(false);
       setDiscover(false);
       setNotification(false);
+      setMerchant(false);
     } else {
       setProfile(false);
     }
@@ -81,6 +94,7 @@ const NavBar = () => {
       setHelp(true);
       setDiscover(false);
       setNotification(false);
+      setMerchant(false);
     } else {
       setHelp(false);
     }
@@ -91,8 +105,20 @@ const NavBar = () => {
       setHelp(false);
       setDiscover(true);
       setNotification(false);
+      setMerchant(false);
     } else {
       setDiscover(false);
+    }
+  };
+  const openMerchant = () => {
+    if (!merchant) {
+      setProfile(false);
+      setHelp(false);
+      setDiscover(false);
+      setNotification(false);
+      setMerchant(true);
+    } else {
+      setMerchant(false);
     }
   };
 
@@ -139,7 +165,7 @@ const NavBar = () => {
           <ChevronDownIcon className="h-4" />
         </a>
         
-          <Link href="/addItem" className="text-white flex items-center hover:link">
+          <Link href="/uploadNFT" className="text-white flex items-center hover:link">
             Add to inventory
             <ChevronDownIcon className="h-4" />
           </Link>
@@ -185,6 +211,16 @@ const NavBar = () => {
                 </div>
               )}
             </div>
+
+            <div className={Style.navbar_conttainer_merchant}>
+              <p onClick={(e) => openMenu(e)}>Merchant</p>
+              {merchant && (
+                <div className={Style.navbar_container_right_merchant_box}>
+                  <Merchant />
+                </div>
+              )}
+            </div>
+
 
             {/* HELP CENTER MENU */}
             <div className={Style.navbar_container_right_help}>
@@ -271,7 +307,9 @@ const NavBar = () => {
       <hr />
       <div>
       <section className="flex py-3 space-x-6 text-xs md:text-sm whitespace-nowrap justify-center px-6">
-        <p className="link">Home</p>
+        <p className="link">
+        <Link href={{ pathname: "/" }}>Home</Link>
+        </p>
         <p className="link">Electronics</p>
         <p className="link">Computers</p>
         <p className="link hidden sm:inline">Video Games</p>
@@ -281,6 +319,10 @@ const NavBar = () => {
         <p className="link hidden lg:inline">Books</p>
         <p className="link hidden lg:inline">Music</p>
         <p className="link hidden xl:inline">Deals</p>
+        <p className="link hidden xl:inline">Rewards</p>
+        <p className="link hidden xl:inline">
+        <Link href={{ pathname: "/profile" }}>Limited Edition Coupons</Link>
+        </p>
         <p className="link hidden xl:inline">Other</p>
         <p className="link">More</p>
       </section>

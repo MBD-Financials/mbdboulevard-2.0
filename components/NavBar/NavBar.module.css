@@ -61,7 +61,7 @@
 
 .navbar_container_right{
     display: grid;
-    grid-template-columns: 1fr 1fr .5fr 1fr .3fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr .3fr 1fr;
     gap: 1rem;
     align-items: center;
     
@@ -90,7 +90,8 @@
 }
 
 .navbar_container_right_discover_box,
-.navbar_container_right_help_box{
+.navbar_container_right_help_box,
+.navbar_container_right_merchant_box {
     position: absolute;
     padding: 1rem .5rem;
     box-shadow: var(--box-shadow);
@@ -101,6 +102,16 @@
 }
 
 .navbar_container_right_notify{
+    position: relative;
+    cursor: pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+}
+.navbar_conttainer_merchant{
     position: relative;
     cursor: pointer;
     -webkit-touch-callout: none; /* iOS Safari */
