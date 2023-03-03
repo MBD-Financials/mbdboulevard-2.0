@@ -36,7 +36,7 @@ const Profile = ({ currentAccount, user }) => {
           {(user.username)?
             <p className="text-2xl">{user.username}</p>
             :
-            <p className="text-2xl">DEV</p>}
+            <p className="text-2xl">User</p>}
             
             <p className="text-sm">{currentAccount.slice(0, 18)}..</p>
         </div>
