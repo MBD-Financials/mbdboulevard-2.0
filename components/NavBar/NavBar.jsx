@@ -49,7 +49,7 @@ const NavBar = () => {
       setProfile(false);
       setMerchant(false);
       openHelpCenter();
-    } else if (btnText == "Merchant"){
+    } else if (btnText == "Built Shop"){
       setDiscover(false);
       setHelp(false);
       setNotification(false);
@@ -153,7 +153,7 @@ const NavBar = () => {
         </div>
 
         <div className="flex items-center space-x-4 text-sm">
-        <p className="headerLink text-white">Pricing </p>
+        <p className="headerLink text-white">Subscription </p>
         <p className="headerLink text-white">MBD Gemz </p>
       
         <a href="https://mbdsend.netlify.app/" className="headerLink text-white flex items-center hover:link">
@@ -186,8 +186,8 @@ const NavBar = () => {
               <Image
                   src={images.logoHome}
                   alt="Profile"
-                  width={40}
-                  height={40}
+                  width={90}
+                  height={80}
                   onClick={() => router.push("/")}
                   className={Style.navbar_container_right_profile}
               />
@@ -213,7 +213,7 @@ const NavBar = () => {
             </div>
 
             <div className={Style.navbar_conttainer_merchant}>
-              <p onClick={(e) => openMenu(e)}>Merchant</p>
+              <p onClick={(e) => openMenu(e)}>Build Shop</p>
               {merchant && (
                 <div className={Style.navbar_container_right_merchant_box}>
                   <Merchant />

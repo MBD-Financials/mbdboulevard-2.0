@@ -20,21 +20,21 @@ const contactus = () => {
         <h1>Contact</h1>
         <div className={Style.contactus_box_box}>
           <div className={Style.contactus_box_box_left}>
-            <div className={Style.contactus_box_box_left_item}>
+            {/* <div className={Style.contactus_box_box_left_item}>
               <h3>🗺 ADDRESS</h3>
               <p>
                 68 Circular road #02-01, Singapore 049422.
               </p>
-            </div>
-            <div className={Style.contactus_box_box_left_item}>
+            </div> */}
+            {/* <div className={Style.contactus_box_box_left_item}>
               <h3>💌 EMAIL</h3>
               <p>info@mbdfinancials.com</p>
-            </div>
-            <div className={Style.contactus_box_box_left_item}>
+            </div> */}
+            {/* <div className={Style.contactus_box_box_left_item}>
               <h3>☎ PHONE</h3>
               <p>ET phone home</p>
-            </div>
-            <div>
+            </div> */}
+            {/* <div className={Style.contactus_box_box_left_item}>
               <h3 className="mt-5">🌏 SOCIALS</h3>
               <div className={Style.contactus_box_box_left_item_social}>
               <a href="https://www.facebook.com/MBDFinancials">
@@ -53,7 +53,7 @@ const contactus = () => {
                 <TiSocialTwitter />
               </a>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className={Style.contactus_box_box_right}>
             <form>

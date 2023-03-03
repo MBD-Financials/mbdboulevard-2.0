@@ -11,8 +11,10 @@ import {
   TiSocialLinkedin,
   TiSocialYoutube,
   TiSocialInstagram,
+
 } from "react-icons/ti";
 import { BsThreeDots } from "react-icons/bs";
+import { SocialIcon } from 'react-social-icons';
 
 //INTERNAL IMPORT
 import Style from "./AuthorProfileCard.module.css";
@@ -80,9 +82,9 @@ const AuthorProfileCard = ({ currentAccount, user}) => {
         <div className={Style.AuthorProfileCard_box_info}>
           <h2>
             {user.username}
-            <span>
+            {/* <span>
               <MdVerified />
-            </span>{" "}
+            </span>{" "} */}
           </h2>
 
           <div className={Style.AuthorProfileCard_box_info_address}>
@@ -109,6 +111,12 @@ const AuthorProfileCard = ({ currentAccount, user}) => {
             </a>
             <a href="#">
               <TiSocialYoutube />
+            </a>
+            <a href="#">
+              <SocialIcon network="discord" style={{ height: 25, width: 25 }} bgColor="#BA00B1" fgColor="#000000"/>
+            </a>
+            <a href="#">
+              <SocialIcon network="telegram" style={{ height: 25, width: 25 }} bgColor="#BA00B1" fgColor="#000000"/>
             </a>
           </div>
         </div>

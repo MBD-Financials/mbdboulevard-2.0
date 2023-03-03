@@ -28,8 +28,7 @@ const Profile = ({ currentAccount, user }) => {
             width={50}
             height={50}
             className={Style.profile_account_img}
-          />
-              
+          /> 
             }
         
 

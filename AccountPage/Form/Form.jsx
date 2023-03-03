@@ -10,7 +10,7 @@ import {
 //INTERNAL IMPORT
 import Style from "./Form.module.css";
 import { Button } from "../../components/componentsindex.js";
-
+import { SocialIcon } from 'react-social-icons';
 
 const Form = ({user,updateUser,fileUrl}) => {
 
@@ -125,7 +125,7 @@ const Form = ({user,updateUser,fileUrl}) => {
 							</div>
 						</div>
 						<div className={Style.Form_box_input}>
-							<label htmlFor="Instragram">Instragram</label>
+							<label htmlFor="Instagram">Instagram</label>
 							<div className={Style.Form_box_input_box}>
 								<div className={Style.Form_box_input_box_icon}>
 									<TiSocialInstagram />
@@ -136,6 +136,31 @@ const Form = ({user,updateUser,fileUrl}) => {
 								/>
 							</div>
 						</div>
+						<div className={Style.Form_box_input}>
+							<label htmlFor="Discord">Discord</label>
+							<div className={Style.Form_box_input_box}>
+								<div className={Style.Form_box_input_box_icon}>
+								<SocialIcon network="discord" style={{ height: 25, width: 25 }} bgColor="#BA00B1" fgColor="#000000"/>
+								</div>
+								<input
+									type="text"
+									placeholder="https://www.discord.com/mbdfinancials/"
+								/>
+							</div>
+						</div>
+						<div className={Style.Form_box_input}>
+							<label htmlFor="Telegram">Telegram</label>
+							<div className={Style.Form_box_input_box}>
+								<div className={Style.Form_box_input_box_icon}>
+								<SocialIcon network="telegram" style={{ height: 25, width: 25 }} bgColor="#BA00B1" fgColor="#000000"/>
+								</div>
+								<input
+									type="text"
+									placeholder="https://www.telegram.com/mbdfinancials/"
+								/>
+							</div>
+						</div>
+						
 					</div>
 
 					{/* <div className={Style.Form_box_input}>
