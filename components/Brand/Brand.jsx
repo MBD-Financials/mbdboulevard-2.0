@@ -33,7 +33,10 @@ const Brand = () => {
           </div>
         </div>
         <div className={Style.Brand_box_right}>
-          <Image src={images.metaverse} alt="brand logo" width={800} height={600} />
+          {/* <Image src={images.metaverse} alt="brand logo" width={800} height={600} /> */}
+          <video autoPlay loop muted  src={require("../../public/Gem.mp4")}>
+            {/* <source  type="video/mp4"/> */}
+          </video>
         </div>
       </div>
     </div>

@@ -28,13 +28,7 @@ const HeroSection = () => {
 					/>
 				</div>
 				<div className={Style.heroSection_box_right}>
-					<Image
-						className="aspect-square"
-						src={images.hero}
-						alt="Hero section"
-						width={600}
-						height={600}
-					/>
+				<video autoPlay loop muted style={{ width: '100%', height: '100%' }} src={require("../../public/Header.mp4")}></video>
 				</div>
 			</div>
 		</div>

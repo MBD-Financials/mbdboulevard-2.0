@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 require('dotenv').config();
+const withVideos = require('next-videos')
+
 
 const nextConfig = {
   reactStrictMode: true,
@@ -10,3 +12,4 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+module.exports = withVideos();
