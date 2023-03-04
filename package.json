@@ -20,6 +20,7 @@
     "fs": "^0.0.1-security",
     "ipfs-http-client": "^58.0.0",
     "next": "^13.1.6",
+    "next-compose-plugins": "^2.2.1",
     "next-videos": "^1.4.1",
     "qs": "^6.11.0",
     "react": "18.2.0",

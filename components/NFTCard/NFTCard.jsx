@@ -89,9 +89,9 @@ const NFTCard = ({ NFTData }) => {
                       <p className="text-xs font-medium">Current Bid</p>
                       <p className="text-sm">{el.price} ETH</p>
                     </div>
-                    <div>
+                    {/* <div>
                       <p className="text-xs">61 in stock</p>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
