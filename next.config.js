@@ -11,9 +11,27 @@ const nextConfig = {
   }
 };
 
-module.exports = withPlugins(
-  [[withVideos()]],
-  nextConfig
-);
-// module.exports = nextConfig;
-// module.exports = withVideos();
+// module.exports = withPlugins(
+//   [[withVideos()]],
+//   nextConfig
+// );
+
+// const { withSentryConfig } = require('@sentry/nextjs');
+
+// const moduleExports = {
+//  // next config
+// };
+
+const plugins = [withVideos];
+
+module.exports = (_phase, { defaultConfig }) => {
+  return plugins.reduce(
+    (acc, plugin) => {
+      if (Array.isArray(plugin)) {
+        return plugin[0](acc, plugin[1]);
+      }
+      return plugin(acc);
+    },
+    { ...nextConfig }
+  );
+};
