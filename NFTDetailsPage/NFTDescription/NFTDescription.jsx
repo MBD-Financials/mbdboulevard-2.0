@@ -204,7 +204,7 @@ const NFTDescription = ({ nft }) => {
           </div>
 
           <div className={Style.NFTDescription_box_profile_biding}>
-            <p>
+            {/* <p>
               <MdTimer /> <span>Auction ending in:</span>
             </p>
 
@@ -241,7 +241,7 @@ const NFTDescription = ({ nft }) => {
                 <p>12</p>
                 <span>secs</span>
               </div>
-            </div>
+            </div> */}
 
             <div className={Style.NFTDescription_box_profile_biding_box_price}>
               <div
@@ -251,7 +251,7 @@ const NFTDescription = ({ nft }) => {
               >
                 <small>Current Bid</small>
                 <p>
-                  {nft.price} ETH <span>( ≈ $3,221.22)</span>
+                  {nft.price} BSC
                 </p>
               </div>
             </div>
