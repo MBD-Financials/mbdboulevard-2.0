@@ -179,7 +179,7 @@ const NFTDescription = ({ nft }) => {
                 <small>Owner</small> <br />
                 <Link href={{ pathname: "/author", query: `${nft.seller}` }}>
                   <span>
-                    MBD <MdVerified />
+                    MBD
                   </span>
                 </Link>
               </div>
@@ -197,7 +197,7 @@ const NFTDescription = ({ nft }) => {
               <div className={Style.NFTDescription_box_profile_box_right_info}>
                 <small>Collection</small> <br />
                 <span>
-                  Mokeny app <MdVerified />
+                  Mokeny app
                 </span>
               </div>
             </div>
