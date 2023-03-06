@@ -157,7 +157,7 @@ const NavBar = () => {
         <p className="headerLink text-white">MBD Gemz </p>
       
         <a href="https://mbdsend.netlify.app/" className="headerLink text-white flex items-center hover:link">
-            Send Crypto
+            CryptoiT!
           <ChevronDownIcon className="h-4" />
           </a>
         <a href="https://aistudio.netlify.app/" className="headerLink text-white flex items-center hover:link">
@@ -247,7 +247,7 @@ const NavBar = () => {
                 <Button btnName="Connect" handleClick={() => connectWallet()} />
               ) : (
                 <Button
-                  btnName="Inventory"
+                  btnName="Create"
                   handleClick={() => router.push("/uploadNFT")}
                 />
               )}
@@ -321,7 +321,10 @@ const NavBar = () => {
         <p className="link hidden xl:inline">Deals</p>
         <p className="link hidden xl:inline">Rewards</p>
         <p className="link hidden xl:inline">
-        <Link href={{ pathname: "/profile" }}>Limited Edition Coupons</Link>
+        <Link href={{ pathname: "/profile" }}>Limited Edition</Link>
+        </p>
+        <p className="link hidden xl:inline">
+        <Link href={{ pathname: "/profile" }}>Coupons</Link>
         </p>
         <p className="link hidden xl:inline">Other</p>
         <p className="link">More</p>

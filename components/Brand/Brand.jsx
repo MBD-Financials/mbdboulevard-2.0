@@ -23,7 +23,7 @@ const Brand = () => {
 
           <div className={Style.Brand_box_left_btn}>
             <Button
-              btnName="Redeem"
+              btnName="Redeem With Gems"
               handleClick={() => router.push("/uploadNFT")}
             />
             <Button

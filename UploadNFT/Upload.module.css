@@ -7,7 +7,7 @@
 
 .upload_box_slider_div{
  display: flex;
- gap: 1rem;
+ gap: 1.5rem;
 }
 
 .upload_box_slider{
@@ -25,7 +25,9 @@
 }
 
 .upload_box_slider_box_img_img{
-    border-radius: 50%;
+    border-radius: 10%;
+    height: 100px;
+    width: 100px;
 }
 
 .upload_box_slider_box_img_icon{
@@ -40,6 +42,8 @@
     font-size: 1.2rem;
     font-weight: 700;
     line-height: 1.2;
+    text-align: center;
+    margin-top: 5%;
 }
 
 .upload_box_btn{

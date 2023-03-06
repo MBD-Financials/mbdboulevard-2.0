@@ -122,7 +122,9 @@ const AuthorProfileCard = ({ currentAccount, user}) => {
         </div>
 
         <div className={Style.AuthorProfileCard_box_share}>
-          <Button btnName="Follow" handleClick={()=>{}} />
+          {/* <Button btnName="Follow" handleClick={()=>{}} /> */}
+          <Button btnName="Followers" handleClick={()=>{}} />
+          <Button btnName="Following" handleClick={()=>{}} />
           <MdCloudUpload
             onClick={() => openShare()}
             className={Style.AuthorProfileCard_box_share_icon}
@@ -158,9 +160,23 @@ const AuthorProfileCard = ({ currentAccount, user}) => {
                 {""}
                 YouTube
               </p>
+              <p>
+                <span>
+                <SocialIcon network="discord" style={{ height: 20, width: 20 }} bgColor="#ffffff" fgColor="#000000"/>
+                </span>{" "}
+                {""}
+                Discord
+              </p>
+              <p>
+                <span>
+                <SocialIcon network="telegram" style={{ height: 20, width: 20 }} bgColor="#ffffff" fgColor="#000000"/>
+                </span>{" "}
+                {""}
+                Telegram
+              </p>
             </div>
           )}
-
+          
           <BsThreeDots
             onClick={() => openReport()}
             className={Style.AuthorProfileCard_box_share_icon}
@@ -175,7 +191,9 @@ const AuthorProfileCard = ({ currentAccount, user}) => {
               Report abouse
             </p>
           )}
+          
         </div>
+        
       </div>
     </div>
   );
