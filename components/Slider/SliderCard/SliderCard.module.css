@@ -82,7 +82,7 @@
     font-weight: 700;
 }
 
-@media screen and (min-device-width: 320px) and (max-device-width: 375px) {
+@media screen and (min-device-width: 320px) and (max-device-width: 425px) {
     .sliderCard{
         padding: .5rem;
     }

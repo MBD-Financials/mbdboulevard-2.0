@@ -23,14 +23,15 @@ const Brand = () => {
 
           <div className={Style.Brand_box_left_btn}>
             <Button
-              btnName="Redeem With Gems"
-              handleClick={() => router.push("/uploadNFT")}
+              btnName="Redeem With Gemz"
+              handleClick={() => router.push("/")}
             />
             <Button
               btnName="Discover"
-              handleClick={() => router.push("/searchPage")}
+              handleClick={() => router.push("/")}
             />
           </div>
+          <p>Coming Soon</p>
         </div>
         <div className={Style.Brand_box_right}>
           {/* <Image src={images.metaverse} alt="brand logo" width={800} height={600} /> */}

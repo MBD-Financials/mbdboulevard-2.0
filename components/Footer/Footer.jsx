@@ -11,7 +11,7 @@ import {
   TiArrowSortedUp,
 } from "react-icons/ti";
 import { RiSendPlaneFill } from "react-icons/ri";
-
+import { SocialIcon } from 'react-social-icons';
 //INTERNAL IMPORT
 import Style from "./Footer.module.css";
 import images from "../../img";
@@ -54,6 +54,12 @@ const Footer = () => {
             <a href="https://www.instagram.com/mbdfinancials/">
               <TiSocialInstagram />
             </a>
+            <a href="#">
+              <SocialIcon network="discord" style={{ height: 20, width: 20 }} bgColor="#ffffff" fgColor="#000000"/>
+            </a>
+          <a href="#">
+            <SocialIcon network="telegram" style={{ height: 20, width: 20 }} bgColor="#ffffff" fgColor="#000000"/>
+          </a>
           </div>
         </div>
 

@@ -10,7 +10,7 @@ const Service = () => {
       <div className={Style.service_box}>
         <div>
           <Image
-            className="ml-20"
+            className="ml-12 sm:ml-20"
             src={images.service1}
             alt="Filter & Discover"
             width={100}
@@ -22,12 +22,12 @@ const Service = () => {
           <h3>Filter & Discover</h3>
           <p>
             Filters and Discover NFTs
-            
+
           </p>
         </div>
-        <div className={Style.service_box_item}>
+        <div>
           <Image
-            className="ml-20"
+            className="ml-6 sm:ml-20"
             src={images.service2}
             alt="Connect Wallet"
             width={100}
@@ -43,7 +43,7 @@ const Service = () => {
         </div>
         <div>
           <Image
-            className="ml-20"
+            className="ml-12 sm:ml-20"
             src={images.service3}
             alt="Mint"
             width={100}
@@ -59,7 +59,7 @@ const Service = () => {
         </div>
         <div>
           <Image
-            className="ml-20"
+            className="ml-6 sm:ml-20"
             src={images.service1}
             alt="Trade"
             width={100}

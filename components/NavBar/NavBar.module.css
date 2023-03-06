@@ -201,4 +201,8 @@
     .sideBar{
         display: block;
     }
+    .navbar_conttainer_merchant{
+        display: none;
+    }
+    
 }

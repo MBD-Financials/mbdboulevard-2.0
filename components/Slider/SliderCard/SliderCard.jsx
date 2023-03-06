@@ -32,14 +32,15 @@ const SliderCard = ({ el, i }) => {
         <div className={Style.sliderCard_box_price}>
           <div className={Style.sliderCard_box_price_box}>
             <small>Current Bid</small>
-            <p>{i + 2}.000 ETH</p>
+            <p>{i + 2} ETH</p>
           </div>
 
           <div className={Style.sliderCard_box_price_time}>
-            <p className="text-xs">Remaining time</p>
-            <pp>
+            <p className="text-xs sm:text-xs">Remaining time</p>
+            <p className="text-xs sm:text-xs">{i + 1}h : 15m : {i + 4}0s</p>
+            {/* <pp>
               {i + 1}h : 15m : {i + 4}0s
-            </pp>
+            </pp> */}
           </div>
         </div>
       </div>

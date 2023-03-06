@@ -153,6 +153,9 @@ const NavBar = () => {
         </div>
 
         <div className="flex items-center space-x-4 text-sm">
+        <Link href="/subscription" className="headerLink text-white">
+            Subscription
+          </Link>
         <p className="headerLink text-white">Subscription </p>
         <p className="headerLink text-white">MBD Gemz </p>
       
@@ -291,7 +294,7 @@ const NavBar = () => {
           </div>
         </div>
 
-        {/* SIDBAR CPMPONE/NT */}
+        {/* SIDBAR CPMPONENT */}
         {openSideMenu && (
           <div className={Style.sideBar}>
             <SideBar
@@ -310,16 +313,16 @@ const NavBar = () => {
         <p className="link">
         <Link href={{ pathname: "/" }}>Home</Link>
         </p>
-        <p className="link">Electronics</p>
-        <p className="link">Computers</p>
-        <p className="link hidden sm:inline">Video Games</p>
-        <p className="link hidden sm:inline">Home & Garden</p>
-        <p className="link hidden md:inline">Health & Beauty</p>
-        <p className="link hidden lg:inline">Collectibles and Art</p>
-        <p className="link hidden lg:inline">Books</p>
+        <p className="link">PFP</p>
+        <p className="link">Arts</p>
+        <p className="link hidden sm:inline">Audio</p>
+        <p className="link hidden sm:inline">Video</p>
+        <p className="link hidden md:inline">Collectibles</p>
+        <p className="link hidden lg:inline">1/1</p>
+        {/* <p className="link hidden lg:inline">Books</p>
         <p className="link hidden lg:inline">Music</p>
         <p className="link hidden xl:inline">Deals</p>
-        <p className="link hidden xl:inline">Rewards</p>
+        <p className="link hidden xl:inline">Rewards</p> */}
         <p className="link hidden xl:inline">
         <Link href={{ pathname: "/profile" }}>Limited Edition</Link>
         </p>

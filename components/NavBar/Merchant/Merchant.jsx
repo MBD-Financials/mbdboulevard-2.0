@@ -7,9 +7,9 @@ import Style from "./Merchant.module.css";
 const Merchant = () => {
   const merchant = [
     {
-      name: "Pricing",
+      name: "Subscription",
       link: "subscription",
-    }
+    },
   ];
   return (
     <div>

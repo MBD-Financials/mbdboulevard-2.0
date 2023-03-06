@@ -13,6 +13,7 @@ import {
   TiArrowSortedUp,
 } from "react-icons/ti";
 import { DiJqueryLogo } from "react-icons/di";
+import { SocialIcon } from 'react-social-icons';
 
 //INTERNAL IMPORT
 import Style from "./SideBar.module.css";
@@ -24,6 +25,7 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
   //------USESTATE
   const [openDiscover, setOpenDiscover] = useState(false);
   const [openHelp, setOpenHelp] = useState(false);
+  const [openMerchant, setOpenMerchant] = useState(false);
 
   const router = useRouter();
 
@@ -36,18 +38,6 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
     {
       name: "Search",
       link: "searchPage",
-    },
-    {
-      name: "Profile",
-      link: "profile",
-    },
-    {
-      name: "NFT Details",
-      link: "NFT-details",
-    },
-    {
-      name: "Account Setting",
-      link: "account",
     },
     {
       name: "Upload NFT",
@@ -71,15 +61,9 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
     {
       name: "Contact Us",
       link: "contactus",
-    },
-    {
-      name: "Sign Up",
-      link: "signUp",
-    },
-    {
-      name: "LogIn",
-      link: "login",
-    },
+    }
+  ];
+  const merchant = [
     {
       name: "Subscription",
       link: "subscription",
@@ -89,8 +73,10 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
   const openDiscoverMenu = () => {
     if (!openDiscover) {
       setOpenDiscover(true);
+      
     } else {
       setOpenDiscover(false);
+      setOpenMerchant(false);
     }
   };
 
@@ -99,6 +85,16 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
       setOpenHelp(true);
     } else {
       setOpenHelp(false);
+      setOpenMerchant(false);
+    }
+  };
+  const openMerchantMenu = () => {
+    if (!openMerchant) {
+      setOpenMerchant(true);
+      
+    } else {
+      setOpenDiscover(false);
+      setOpenMerchant(false);
     }
   };
 
@@ -114,12 +110,7 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
       />
 
       <div className={Style.sideBar_box}>
-        {/* <Image src={images.logo} alt="logo" width={150} height={150} /> */}
-        <p>
-          <a href="/">
-            <DiJqueryLogo className={Style.sideBar_box_logo} />
-          </a>
-        </p>
+        <Image src={images.logoHome} alt="logo" width={150} height={150} />
         <p>
           Discover the most outstanding articles on all topices of NFT & write
           your own stories and share them
@@ -140,6 +131,13 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
           <a href="https://www.instagram.com/mbdfinancials/">
             <TiSocialInstagram />
           </a>
+          <a href="#">
+              <SocialIcon network="discord" style={{ height: 20, width: 20 }} bgColor="#ffffff" fgColor="#000000"/>
+            </a>
+          <a href="#">
+            <SocialIcon network="telegram" style={{ height: 20, width: 20 }} bgColor="#ffffff" fgColor="#000000"/>
+          </a>
+
         </div>
       </div>
 
@@ -183,6 +181,25 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
             </div>
           )}
         </div>
+        <div>
+          <div
+            className={Style.sideBar_menu_box}
+            onClick={() => openMerchantMenu()}
+          >
+            <p>Build Store</p>
+            <TiArrowSortedDown />
+          </div>
+
+          {openMerchant && (
+            <div className={Style.sideBar_discover}>
+              {merchant.map((el, i) => (
+                <p key={i + 1}>
+                  <Link href={{ pathname: `${el.link}` }}>{el.name}</Link>
+                </p>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       <div className={Style.sideBar_button}>
@@ -195,7 +212,7 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
           />
         )}
 
-        <Button btnName="Connect Wallet" handleClick={() => {}} />
+        {/* <Button btnName="Connect Wallet" handleClick={() => {}} /> */}
       </div>
     </div>
   );

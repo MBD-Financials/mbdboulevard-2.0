@@ -62,8 +62,8 @@ const Category = () => {
               src={el.images}
               className={Style.category_box_img}
               alt="Background image"
-              width={350}
-              height={150}
+              // width={350}
+              // height={150}
               style={{objectFit:"cover"}}
             />
 

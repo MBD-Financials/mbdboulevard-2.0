@@ -74,7 +74,7 @@ const AudioCard = () => {
             <h4>NFT music #1123</h4>
             <div className={Style.audioCard_box_details_info_price}>
               <small>Price</small>
-              <p>$3,221.33</p>
+              <p>1 ETH</p>
             </div>
           </div>
 

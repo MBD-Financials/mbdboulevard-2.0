@@ -120,11 +120,15 @@ const AuthorProfileCard = ({ currentAccount, user}) => {
             </a>
           </div>
         </div>
-
+        {/* <div className={Style.AuthorProfileCard_box_share}>
+          
+          <Button btnName="Followers" handleClick={()=>{}} />
+          <Button btnName="Following" handleClick={()=>{}} />
+        </div> */}
         <div className={Style.AuthorProfileCard_box_share}>
           {/* <Button btnName="Follow" handleClick={()=>{}} /> */}
           <Button btnName="Followers" handleClick={()=>{}} />
-          <Button btnName="Following" handleClick={()=>{}} />
+          <Button btnName="Following" handleClick={()=>{}} /> 
           <MdCloudUpload
             onClick={() => openShare()}
             className={Style.AuthorProfileCard_box_share_icon}
