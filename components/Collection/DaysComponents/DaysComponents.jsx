@@ -62,8 +62,8 @@ const DaysComponents = ({ el, i }) => {
                 style={{objectFit:"cover"}}
               />
 
-              <p className="flex space-x-1.5 items-center">
-              <small>Creator Cain </small>
+              <p className="flex text-lg space-x-1.5 items-center">
+              Creator Cain
               </p>
             </div>
 
