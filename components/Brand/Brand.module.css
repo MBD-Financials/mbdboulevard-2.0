@@ -49,4 +49,12 @@
     .Brand_box_left p{
         margin-top: -.5rem;
     }
+    .Brand_box_left_btn{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        font-size: .1rem;
+    }
 }
