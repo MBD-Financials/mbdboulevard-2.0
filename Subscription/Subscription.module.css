@@ -50,4 +50,24 @@
     .SubscriptionBox_box_info_para{
         font-size: 1rem;
     }
+    .SubscriptionBox_box_span{
+        font-size: 1rem;
+        font-weight: 900;
+    }
+    .SubscriptionBox_box_price{
+        font-size: 1.5rem;
+        line-height: 0;
+        font-weight: 700;
+    }
+    .SubscriptionBox_box_small{
+        position: absolute;
+        right: 2rem;
+        font-size: .6rem;
+        font-weight: 700;
+        background-color: var(--icons-color);
+        color: var(--main-bg-color);
+        padding: .5rem 1rem;
+        border-radius: .5rem;
+        
+    }
 }

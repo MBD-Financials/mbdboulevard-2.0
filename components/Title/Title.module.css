@@ -20,7 +20,8 @@
     }
 
     .title_box h2{
-        font-size: 1.8rem;
+        font-size: 1.3rem;
         line-height: 0;
+        font-weight: 600;
     }
 }
