@@ -63,7 +63,7 @@ const DaysComponents = ({ el, i }) => {
               />
 
               <p className="flex space-x-1.5 items-center">
-                Creator Cain <small></small>
+              <small>Creator Cain </small>
               </p>
             </div>
 
