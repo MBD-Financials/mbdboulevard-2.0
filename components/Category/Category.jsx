@@ -18,7 +18,7 @@ const Category = () => {
     },
     {
       images: images.creatorbackground3,
-      name: "Entirtment Art",
+      name: "Entertainment Art",
     },
     {
       images: images.creatorbackground4,

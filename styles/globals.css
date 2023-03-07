@@ -20,6 +20,7 @@
 /* //THEME 5 */
   :root{
   --icons-color: #ba00b1;
+  -webkit-text-fill-color: #ffffff; 
   --icons-light-color: #B901AF57;
   --icons-bg-color: #B901AF;
   --shadow-dark-color: #343334;
@@ -62,7 +63,7 @@ textarea::placeholder{
 }
 
 a {
-  color: inherit;
+  color: #ffffff;
   text-decoration: none;
 }
 
