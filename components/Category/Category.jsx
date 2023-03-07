@@ -47,11 +47,7 @@ const Category = () => {
     {
       images: images.creatorbackground9,
       name: " Arts",
-    },
-    {
-      images: images.creatorbackground10,
-      name: "My Fav",
-    },
+    }
   ];
   return (
     <div className={Style.box_category}>
@@ -72,7 +68,7 @@ const Category = () => {
                 <BsCircleFill />
               </span>
               <div className={Style.category_box_title_info}>
-                <h4 className="mb-5 mt-5">{el.name}</h4>
+                <h4 className="text-sm mb-2 lg:mb-3 lg:mt-3 xl:mb-3 xl:mt-3 2xl:mb-3 2xl:mt-3">{el.name}</h4>
                 <small>{i + 1}995 NFTS</small>
               </div>
             </div>
