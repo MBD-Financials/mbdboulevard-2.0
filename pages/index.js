@@ -84,19 +84,13 @@ const Home = () => {
       <Category />
 
       <Collection />
-      {/* {creators.length == 0 ? (
-        <Loader />
-      ) : (
-        <FollowerTab TopCreator={creators} />
-      )} */}
       <Title
         heading="Featured NFTs"
         paragraph="Discover the most outstanding NFTs in all topics of life."
       />
       <Filter />
       {nfts.length == 0 ? <Loader /> : <NFTCard NFTData={nfts} />}
-      {/* <BigNFTSilder /> */}
-
+      
       <Title
         heading="Audio Collection"
         paragraph="Discover the most outstanding NFTs in all topics of life."
@@ -104,9 +98,9 @@ const Home = () => {
       <AudioLive />
 
       <Slider />  
-      {/* <Subscribe /> */}
+      
       <Brand />
-      {/* <Video />  */}
+      
     </div>
   );
 };

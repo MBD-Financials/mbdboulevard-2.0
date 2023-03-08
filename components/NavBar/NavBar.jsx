@@ -156,21 +156,20 @@ const NavBar = () => {
         <Link href="/subscription" className="headerLink text-white">
             Subscription
           </Link>
-        <p className="headerLink text-white">Subscription </p>
         <p className="headerLink text-white">MBD Gemz </p>
       
         <a href="https://mbdsend.netlify.app/" className="headerLink text-white flex items-center hover:link">
             CryptoiT!
-          <ChevronDownIcon className="h-4" />
+          {/* <ChevronDownIcon className="h-4" /> */}
           </a>
         <a href="https://aistudio.netlify.app/" className="headerLink text-white flex items-center hover:link">
             AI Studio
-          <ChevronDownIcon className="h-4" />
+          {/* <ChevronDownIcon className="h-4" /> */}
         </a>
         
           <Link href="/uploadNFT" className="text-white flex items-center hover:link">
             Add to inventory
-            <ChevronDownIcon className="h-4" />
+            {/* <ChevronDownIcon className="h-4" /> */}
           </Link>
 
           <BellIcon className="text-white h-6 w-6" />
