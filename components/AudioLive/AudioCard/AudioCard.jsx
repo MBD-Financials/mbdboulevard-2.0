@@ -45,14 +45,14 @@ const AudioCard = () => {
 
           <div className={Style.audioCard_box_time}>
             <div className={Style.audioCard_box_like_time_remaing}>
-              <small>Reaming time</small>
-              <h5>3h : 15m :20s</h5>
+              <p className="text-sm">Remaning time</p>
+              <h5>3h : 15m : 20s</h5>
             </div>
           </div>
         </div>
 
         <div className={Style.audioCard_box_player}>
-          <Image src={images.musiceWave} alt="musice" width={200} />
+          <Image src={images.musiceWave} alt="musie"/>
           <div
             className={Style.audioCard_box_musicPlayer}
             onClick={() => playMusic()}
@@ -74,7 +74,7 @@ const AudioCard = () => {
             <h4>NFT music #1123</h4>
             <div className={Style.audioCard_box_details_info_price}>
               <small>Price</small>
-              <p>$3,221.33</p>
+              <p>1 ETH</p>
             </div>
           </div>
 

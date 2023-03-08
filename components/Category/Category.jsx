@@ -18,7 +18,7 @@ const Category = () => {
     },
     {
       images: images.creatorbackground3,
-      name: "Entirtment Art",
+      name: "Entertainment Art",
     },
     {
       images: images.creatorbackground4,
@@ -47,11 +47,7 @@ const Category = () => {
     {
       images: images.creatorbackground9,
       name: " Arts",
-    },
-    {
-      images: images.creatorbackground10,
-      name: "My Fav",
-    },
+    }
   ];
   return (
     <div className={Style.box_category}>
@@ -62,9 +58,9 @@ const Category = () => {
               src={el.images}
               className={Style.category_box_img}
               alt="Background image"
-              width={350}
-              height={150}
-              objectFit="cover"
+              // width={350}
+              // height={150}
+              style={{objectFit:"cover"}}
             />
 
             <div className={Style.category_box_title}>
@@ -72,7 +68,7 @@ const Category = () => {
                 <BsCircleFill />
               </span>
               <div className={Style.category_box_title_info}>
-                <h4>{el.name}</h4>
+                <h4 className="text-sm mb-2 lg:mb-3 lg:mt-3 xl:mb-3 xl:mt-3 2xl:mb-3 2xl:mt-3">{el.name}</h4>
                 <small>{i + 1}995 NFTS</small>
               </div>
             </div>

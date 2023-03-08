@@ -12,6 +12,7 @@
     text-align: center;
 }
 
+
 .service_box_item_step{
     margin-top: 3rem;
     margin-bottom: 2rem;
@@ -34,5 +35,7 @@
     .service_box{
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
+        /* align-items: center; */
     }
+    
 }

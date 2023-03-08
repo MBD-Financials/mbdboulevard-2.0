@@ -39,7 +39,7 @@ const NFTDescription = ({ nft }) => {
   const router = useRouter();
 
   const historyArray = [
-    images.user1,
+    images.user10,
     images.user2,
     images.user3,
     images.user4,
@@ -53,7 +53,7 @@ const NFTDescription = ({ nft }) => {
     images.user10,
   ];
   const ownerArray = [
-    images.user1,
+    images.user10,
     images.user8,
     images.user2,
     images.user6,
@@ -176,10 +176,10 @@ const NFTDescription = ({ nft }) => {
                 className={Style.NFTDescription_box_profile_box_left_img}
               />
               <div className={Style.NFTDescription_box_profile_box_left_info}>
-                <small>Creator</small> <br />
+                <small>Owner</small> <br />
                 <Link href={{ pathname: "/author", query: `${nft.seller}` }}>
                   <span>
-                    Karli Costa <MdVerified />
+                    MBD
                   </span>
                 </Link>
               </div>
@@ -197,14 +197,14 @@ const NFTDescription = ({ nft }) => {
               <div className={Style.NFTDescription_box_profile_box_right_info}>
                 <small>Collection</small> <br />
                 <span>
-                  Mokeny app <MdVerified />
+                  Mokeny app
                 </span>
               </div>
             </div>
           </div>
 
           <div className={Style.NFTDescription_box_profile_biding}>
-            <p>
+            {/* <p>
               <MdTimer /> <span>Auction ending in:</span>
             </p>
 
@@ -241,7 +241,7 @@ const NFTDescription = ({ nft }) => {
                 <p>12</p>
                 <span>secs</span>
               </div>
-            </div>
+            </div> */}
 
             <div className={Style.NFTDescription_box_profile_biding_box_price}>
               <div
@@ -251,11 +251,9 @@ const NFTDescription = ({ nft }) => {
               >
                 <small>Current Bid</small>
                 <p>
-                  {nft.price} ETH <span>( ≈ $3,221.22)</span>
+                  {nft.price} BSC
                 </p>
               </div>
-
-              <span>[96 in stock]</span>
             </div>
 
             <div className={Style.NFTDescription_box_profile_biding_box_button}>

@@ -30,7 +30,7 @@ const UloadNFT = ({ uploadToIPFS, createNFT}) => {
   const categoryArry = [
     {
       image: images.nft_image_1,
-      category: "Sports",
+      category: "PFP",
     },
     {
       image: images.nft_image_2,
@@ -38,20 +38,20 @@ const UloadNFT = ({ uploadToIPFS, createNFT}) => {
     },
     {
       image: images.nft_image_3,
-      category: "Music",
+      category: "Audio",
     },
     {
       image: images.nft_image_1,
-      category: "Digital",
+      category: "Video",
     },
     {
       image: images.nft_image_2,
-      category: "Time",
+      category: "Collectibles",
     },
     {
       image: images.nft_image_3,
-      category: "Photography",
-    },
+      category: "1/1",
+    }
   ];
 
   return (
@@ -76,7 +76,7 @@ const UloadNFT = ({ uploadToIPFS, createNFT}) => {
           <label htmlFor="nft">Item Name</label>
           <input
             type="text"
-            placeholder="Cain "
+            placeholder="MBD"
             className={formStyle.Form_box_input_userName}
             onChange={(e) => setName(e.target.value)}
           />
@@ -135,20 +135,20 @@ const UloadNFT = ({ uploadToIPFS, createNFT}) => {
                 onClick={() => (setActive(i + 1), setCategory(el.category))}
               >
                 <div className={Style.upload_box_slider_box}>
-                  <div className={Style.upload_box_slider_box_img}>
+                  <div >
                     <Image
                       src={el.image}
                       alt="background image"
-                      width={70}
-                      height={70}
+                      width={100}
+                      height={100}
                       className={Style.upload_box_slider_box_img_img}
                     />
                   </div>
-                  <div className={Style.upload_box_slider_box_img_icon}>
+                  {/* <div className={Style.upload_box_slider_box_img_icon}>
                     <TiTick />
-                  </div>
+                  </div> */}
                 </div>
-                <p>Crypto Legend - {el.category} </p>
+                <p>{el.category} </p>
               </div>
             ))}
           </div>
@@ -163,33 +163,21 @@ const UloadNFT = ({ uploadToIPFS, createNFT}) => {
               </div>
               <input
                 type="text"
-                placeholder="20%"
+                placeholder="20"
                 onChange={(e) => setRoyalties(e.target.value)}
               />
             </div>
           </div>
+          
           <div className={formStyle.Form_box_input}>
-            <label htmlFor="size">Size</label>
-            <div className={formStyle.Form_box_input_box}>
-              <div className={formStyle.Form_box_input_box_icon}>
-                <MdOutlineAttachFile />
-              </div>
-              <input
-                type="text"
-                placeholder="165MB"
-                onChange={(e) => setFileSize(e.target.value)}
-              />
-            </div>
-          </div>
-          <div className={formStyle.Form_box_input}>
-            <label htmlFor="Propertie">Propertie</label>
+            <label htmlFor="Propertie">Properties</label>
             <div className={formStyle.Form_box_input_box}>
               <div className={formStyle.Form_box_input_box_icon}>
                 <AiTwotonePropertySafety />
               </div>
               <input
                 type="text"
-                placeholder="Propertie"
+                placeholder="Properties"
                 onChange={(e) => setProperties(e.target.value)}
               />
             </div>

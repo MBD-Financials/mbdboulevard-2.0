@@ -10,9 +10,11 @@ const Subscription = ({ el, i }) => {
     <div className={Style.SubscriptionBox}>
       <div className={Style.SubscriptionBox_box}>
         <span className={Style.SubscriptionBox_box_span}>{el.plan}</span>
+        {el.popular !== "" ? 
         <small className={Style.SubscriptionBox_box_small}>
           {el.popular || ""}
-        </small>
+        </small>:""
+        }
         <p className={Style.SubscriptionBox_box_price}>{el.price}</p>
 
         <div className={Style.SubscriptionBox_box_info}>
@@ -26,7 +28,7 @@ const Subscription = ({ el, i }) => {
           ))}
         </div>
         <Button
-          btnName="Submit"
+          btnName="Coming Soon"
           handleClick={() => {}}
           classStyle={Style.button}
         />

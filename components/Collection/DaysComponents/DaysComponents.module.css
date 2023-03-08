@@ -51,7 +51,7 @@
 
 .daysComponent_box_title_info_profile span{
   font-weight: 600;
-  padding-inline: .5rem;
+  /* padding-inline: .5rem; */
 }
 
 .daysComponent_box_title_info_price small{

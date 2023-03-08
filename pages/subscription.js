@@ -7,14 +7,14 @@ const subscription = () => {
   const subscriptionArray = [
     {
       plan: "STARTER",
-      price: "$5/mo",
+      price: "coming soon",
       popular: "",
       service: ["Automated Reporting", "Faster Processing", "Customizations"],
       info: "Literally you probably haven't heard of them jean shorts.",
     },
     {
       plan: "BASIC",
-      price: "$15/mo",
+      price: "coming soon",
       popular: "POPULAR",
       service: [
         "Everything in Starter",
@@ -27,7 +27,7 @@ const subscription = () => {
     },
     {
       plan: "PLUS",
-      price: "$25/mo",
+      price: "coming soon",
       popular: "",
       service: [
         "Everything in Basic",

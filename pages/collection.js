@@ -8,7 +8,7 @@ import {
   CollectionProfile,
   NFTCardTwo,
 } from "../collectionPage/collectionIndex";
-import { Slider, Brand } from "../components/componentsindex";
+import { Slider, Brand, NFTCard } from "../components/componentsindex";
 import Filter from "../components/Filter/Filter";
 
 const collection = () => {
@@ -43,7 +43,7 @@ const collection = () => {
       <Banner bannerImage={images.creatorbackground1} />
       <CollectionProfile />
       <Filter />
-      <NFTCardTwo NFTData={collectionArray} />
+      <NFTCard NFTData={collectionArray} />
 
       <Slider />
       <Brand />

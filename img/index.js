@@ -57,8 +57,11 @@ import loader from "./loadergif.gif";
 import errorgif from "./error.gif";
 import transfer from "./transfer.gif";
 import transferEther from "./ethereTransfer.gif";
+import logoHome from "./logo.png"
+import metaverse from "./metaverse.jpg"
 
 export default {
+  logoHome,
   hero2,
   founder1,
   founder2,
@@ -118,4 +121,5 @@ export default {
   errorgif,
   transfer,
   transferEther,
+  metaverse
 };

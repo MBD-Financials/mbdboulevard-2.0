@@ -13,8 +13,10 @@
     cursor: pointer;
 }
 
+
 .DropZone_box_input p{
     line-height: 0;
+    margin-top: 15px;
 }
 
 .DropZone_box_input_img_img{
@@ -38,7 +40,7 @@
 .DropZone_box_aside_box_preview p span{
     font-size: 1.2rem;
     font-weight: 700;
-    margin-inline: 1rem;
+    /* margin-inline: 1rem; */
 }
 
 .DropZone_box_aside_box_preview_one{
@@ -47,6 +49,9 @@
     justify-content: space-between;
     font-weight: 700;
     font-size: 1.2rem;
+    display: grid;
+    margin-top: 5px;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .DropZone_box_aside_box_preview_three{

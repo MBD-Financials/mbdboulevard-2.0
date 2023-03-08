@@ -59,11 +59,12 @@ const Filter = () => {
     <div className={Style.filter}>
       <div className={Style.filter_box}>
         <div className={Style.filter_box_left}>
-          <button onClick={() => {}}>NFTs</button>
+          <button onClick={() => {}}>PFP</button>
           <button onClick={() => {}}>Arts</button>
-          <button onClick={() => {}}>Musics</button>
-          <button onClick={() => {}}>Sports</button>
-          <button onClick={() => {}}>Photography</button>
+          <button onClick={() => {}}>Audio</button>
+          <button onClick={() => {}}>Video</button>
+          <button onClick={() => {}}>Collectibles</button>
+          <button onClick={() => {}}>1/1</button>
         </div>
 
         <div className={Style.filter_box_right}>
@@ -72,19 +73,19 @@ const Filter = () => {
             onClick={() => openFilter()}
           >
             <FaFilter />
-            <span>Filter</span> {filter ? <FaAngleDown /> : <FaAngleUp />}
+            <span>Filter</span> {filter ?  <FaAngleUp /> :<FaAngleDown />}
           </div>
         </div>
       </div>
 
       {filter && (
         <div className={Style.filter_box_items}>
-          <div className={Style.filter_box_items_box}>
+          {/* <div className={Style.filter_box_items_box}>
             <div className={Style.filter_box_items_box_item}>
-              <FaWallet /> <span>10 ETH</span>
+              <FaWallet /> <span> 1 ETH</span>
               <AiFillCloseCircle />
             </div>
-          </div>
+          </div> */}
 
           <div className={Style.filter_box_items_box}>
             <div
@@ -116,12 +117,12 @@ const Filter = () => {
             </div>
           </div>
 
-          <div className={Style.filter_box_items_box}>
+          {/* <div className={Style.filter_box_items_box}>
             <div className={Style.filter_box_items_box_item}>
               <FaUserAlt /> <span>Verified</span>
               <MdVerified />
             </div>
-          </div>
+          </div> */}
         </div>
       )}
     </div>

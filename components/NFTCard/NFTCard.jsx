@@ -39,11 +39,12 @@ const NFTCard = ({ NFTData }) => {
           <div className={Style.NFTCard_box} key={i + 1}>
             <div className={Style.NFTCard_box_img}>
               <Image
+                className="aspect-auto mb-3 rounded-2xl object-cover h-80 w-100"
                 src={el.image}
                 alt="NFT images"
                 width={600}
                 height={600}
-                className={Style.NFTCard_box_img_img}
+                // className={Style.NFTCard_box_img_img}
               />
             </div>
 
@@ -64,18 +65,18 @@ const NFTCard = ({ NFTData }) => {
                 </div>
               </div>
 
-              <div className={Style.NFTCard_box_update_right}>
-                <div className={Style.NFTCard_box_update_right_info}>
-                  <small>Remaining time</small>
-                  <p>3h : 15m : 20s</p>
+              {/* <div className={Style.NFTCard_box_update_right}>
+                <div className="">
+                  <p className="text-sm font-medium">Remaining time</p>
+                  <p className="text-lg">3h : 15m : 20s</p>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className={Style.NFTCard_box_update_details}>
               <div className={Style.NFTCard_box_update_details_price}>
                 <div className={Style.NFTCard_box_update_details_price_box}>
-                  <h4>
+                  <h4 className="mt-5 mb-1">
                     {el.name} #{el.tokenId}
                   </h4>
 
@@ -85,22 +86,18 @@ const NFTCard = ({ NFTData }) => {
                     <div
                       className={Style.NFTCard_box_update_details_price_box_bid}
                     >
-                      <small>Current Bid</small>
-                      <p>{el.price}ETH</p>
+                      <p className="text-xs font-medium">Current Bid</p>
+                      <p className="text-sm">{el.price} ETH</p>
                     </div>
-                    <div
-                      className={
-                        Style.NFTCard_box_update_details_price_box_stock
-                      }
-                    >
-                      <small>61 in stock</small>
-                    </div>
+                    {/* <div>
+                      <p className="text-xs">61 in stock</p>
+                    </div> */}
                   </div>
                 </div>
               </div>
-              <div className={Style.NFTCard_box_update_details_category}>
+              {/* <div className={Style.NFTCard_box_update_details_category}>
                 <BsImages />
-              </div>
+              </div> */}
             </div>
           </div>
         </Link>

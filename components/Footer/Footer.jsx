@@ -11,7 +11,7 @@ import {
   TiArrowSortedUp,
 } from "react-icons/ti";
 import { RiSendPlaneFill } from "react-icons/ri";
-
+import { SocialIcon } from 'react-social-icons';
 //INTERNAL IMPORT
 import Style from "./Footer.module.css";
 import images from "../../img";
@@ -23,9 +23,17 @@ const Footer = () => {
       <div className={Style.footer_box}>
         <div className={Style.footer_box_social}>
           {/* <Image src={images.logo} alt="footer logo" height={100} width={100} /> */}
-          <a href="/">
-            <DiJqueryLogo className={Style.footer_box_social_logo} />
-          </a>
+          {/* <a href="/"> */}
+            {/* <DiJqueryLogo className={Style.footer_box_social_logo} /> */}
+            <Image
+                src={images.logoHome}
+                alt="Profile"
+                width={40}
+                height={40}
+                onClick={() => router.push("/")}
+                className={Style.navbar_container_right_profile}
+            />
+          {/* </a> */}
           <p>
           The world's premier digital bazaar for unique crypto-collectibles and NFTs. Experience seamless transactions for one-of-a-kind digital assets. Explore, buy, and sell the most exclusive digital and physical items on the market.
           </p>
@@ -46,6 +54,12 @@ const Footer = () => {
             <a href="https://www.instagram.com/mbdfinancials/">
               <TiSocialInstagram />
             </a>
+            <a href="#">
+              <SocialIcon network="discord" style={{ height: 20, width: 20 }} bgColor="#ffffff" fgColor="#000000"/>
+            </a>
+          <a href="#">
+            <SocialIcon network="telegram" style={{ height: 20, width: 20 }} bgColor="#ffffff" fgColor="#000000"/>
+          </a>
           </div>
         </div>
 

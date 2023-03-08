@@ -11,18 +11,21 @@ import {
   TiSocialLinkedin,
   TiSocialYoutube,
   TiSocialInstagram,
+
 } from "react-icons/ti";
 import { BsThreeDots } from "react-icons/bs";
+import { SocialIcon } from 'react-social-icons';
 
 //INTERNAL IMPORT
 import Style from "./AuthorProfileCard.module.css";
 import images from "../../img";
 import { Button } from "../../components/componentsindex.js";
 
-const AuthorProfileCard = ({ currentAccount }) => {
+
+
+const AuthorProfileCard = ({ currentAccount, user}) => {
   const [share, setShare] = useState(false);
   const [report, setReport] = useState(false);
-
   //copyAddress function
   const copyAddress = () => {
     const copyText = document.getElementById("myInput");
@@ -52,7 +55,19 @@ const AuthorProfileCard = ({ currentAccount }) => {
   return (
     <div className={Style.AuthorProfileCard}>
       <div className={Style.AuthorProfileCard_box}>
-        <div className={Style.AuthorProfileCard_box_img}>
+        
+        {(user.photo)?
+          <div className={Style.AuthorProfileCard_box_img}>
+          <Image
+            src={user.photo}
+            className={Style.AuthorProfileCard_box_img_img}
+            alt="NFT IMAGES"
+            width={220}
+            height={220}
+          />
+        </div>
+        :(
+          <div className={Style.AuthorProfileCard_box_img}>
           <Image
             src={images.nft_image_1}
             className={Style.AuthorProfileCard_box_img_img}
@@ -61,13 +76,15 @@ const AuthorProfileCard = ({ currentAccount }) => {
             height={220}
           />
         </div>
+        )}
+          
 
         <div className={Style.AuthorProfileCard_box_info}>
           <h2>
-            Dony Herrera{""}{" "}
-            <span>
+            {user.username}
+            {/* <span>
               <MdVerified />
-            </span>{" "}
+            </span>{" "} */}
           </h2>
 
           <div className={Style.AuthorProfileCard_box_info_address}>
@@ -78,9 +95,8 @@ const AuthorProfileCard = ({ currentAccount }) => {
             />
           </div>
 
-          <p>
-            Punk #4786 / An OG Cryptopunk Collector, hoarder of NFTs.
-            Contributing to @ether_cards, an NFT Monetization Platform.
+          <p className="mt-2">
+            {user.bio}
           </p>
 
           <div className={Style.AuthorProfileCard_box_info_social}>
@@ -96,11 +112,23 @@ const AuthorProfileCard = ({ currentAccount }) => {
             <a href="#">
               <TiSocialYoutube />
             </a>
+            <a href="#">
+              <SocialIcon network="discord" style={{ height: 25, width: 25 }} bgColor="#BA00B1" fgColor="#000000"/>
+            </a>
+            <a href="#">
+              <SocialIcon network="telegram" style={{ height: 25, width: 25 }} bgColor="#BA00B1" fgColor="#000000"/>
+            </a>
           </div>
         </div>
-
+        {/* <div className={Style.AuthorProfileCard_box_share}>
+          
+          <Button btnName="Followers" handleClick={()=>{}} />
+          <Button btnName="Following" handleClick={()=>{}} />
+        </div> */}
         <div className={Style.AuthorProfileCard_box_share}>
-          <Button btnName="Follow" handleClick={() => {}} />
+          {/* <Button btnName="Follow" handleClick={()=>{}} /> */}
+          <Button btnName="Followers" handleClick={()=>{}} />
+          <Button btnName="Following" handleClick={()=>{}} /> 
           <MdCloudUpload
             onClick={() => openShare()}
             className={Style.AuthorProfileCard_box_share_icon}
@@ -136,9 +164,23 @@ const AuthorProfileCard = ({ currentAccount }) => {
                 {""}
                 YouTube
               </p>
+              <p>
+                <span>
+                <SocialIcon network="discord" style={{ height: 20, width: 20 }} bgColor="#ffffff" fgColor="#000000"/>
+                </span>{" "}
+                {""}
+                Discord
+              </p>
+              <p>
+                <span>
+                <SocialIcon network="telegram" style={{ height: 20, width: 20 }} bgColor="#ffffff" fgColor="#000000"/>
+                </span>{" "}
+                {""}
+                Telegram
+              </p>
             </div>
           )}
-
+          
           <BsThreeDots
             onClick={() => openReport()}
             className={Style.AuthorProfileCard_box_share_icon}
@@ -153,7 +195,9 @@ const AuthorProfileCard = ({ currentAccount }) => {
               Report abouse
             </p>
           )}
+          
         </div>
+        
       </div>
     </div>
   );

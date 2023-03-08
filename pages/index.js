@@ -38,7 +38,7 @@ const Home = () => {
       fetchNFTs().then((items) => {
         setNfts(items.reverse());
         setNftsCopy(items);
-        console.log(nfts);
+        // console.log(nfts);
       });
     }
   },[currentAccount]);
@@ -74,20 +74,15 @@ const Home = () => {
   return (
     <div className={Style.homePage}>
       <HeroSection />
+      
       <Service />
-      <BigNFTSilder />
-      <Title
-        heading="Audio Collection"
-        paragraph="Discover the most outstanding NFTs in all topics of life."
-      />
-      <AudioLive />
-      {creators.length == 0 ? (
-        <Loader />
-      ) : (
-        <FollowerTab TopCreator={creators} />
-      )}
 
-      <Slider />
+      <Title
+        heading="Browse by category"
+        paragraph="Explore the NFTs in the most featured categories."
+      />
+      <Category />
+
       <Collection />
       <Title
         heading="Featured NFTs"
@@ -95,15 +90,17 @@ const Home = () => {
       />
       <Filter />
       {nfts.length == 0 ? <Loader /> : <NFTCard NFTData={nfts} />}
-
+      
       <Title
-        heading="Browse by category"
-        paragraph="Explore the NFTs in the most featured categories."
+        heading="Audio Collection"
+        paragraph="Discover the most outstanding NFTs in all topics of life."
       />
-      <Category />
-      <Subscribe />
+      <AudioLive />
+
+      <Slider />  
+      
       <Brand />
-      <Video />
+      
     </div>
   );
 };

@@ -14,13 +14,14 @@
     line-height: 0;
 }
 
-@media screen and (min-device-width: 320px) and (max-device-width: 425px) {
+@media screen and (min-device-width: 320px) and (max-device-width: 600px) {
     .title_box{
         width: 90%;
     }
 
     .title_box h2{
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         line-height: 0;
+        font-weight: 600;
     }
 }

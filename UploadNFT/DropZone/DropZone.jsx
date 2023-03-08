@@ -34,19 +34,20 @@ const DropZone = ({
     accept: "image/*",
     maxSize: 5000000,
   });
+  
   return (
     <div className={Style.DropZone}>
       <div className={Style.DropZone_box} {...getRootProps()}>
         <input {...getInputProps()} />
-        <div className={Style.DropZone_box_input}>
-          <p>{title}</p>
+        <div>
+          <h1>{title}</h1>
           <div className={Style.DropZone_box_input_img}>
             <Image
               src={images.upload}
               alt="upload"
               width={100}
               height={100}
-              objectFit="contain"
+              style = {{objectFit:"contain"}}
               className={Style.DropZone_box_input_img_img}
             />
           </div>
@@ -63,39 +64,41 @@ const DropZone = ({
             <div className={Style.DropZone_box_aside_box_preview}>
               <div className={Style.DropZone_box_aside_box_preview_one}>
                 <p>
-                  <samp>NFT Name:</samp>
+                  <samp>NFT Name: </samp>
                   {name || ""}
                 </p>
                 <p>
-                  <samp>Website:</samp>
+                  <samp>Website: </samp>
                   {website || ""}
                 </p>
-              </div>
-
-              <div className={Style.DropZone_box_aside_box_preview_two}>
+                
                 <p>
-                  <span>Description</span>
+                  <samp>Royalties: </samp>
+                  {royalties || ""}
+                </p>
+                <p>
+                  <samp>Properties: </samp>
+                  {properties || ""}
+                </p>
+                <p>
+                  <samp>Category: </samp>
+                  {category || ""}
+                </p>
+                <p>
+                  <samp>Description: </samp>
                   {description || ""}
                 </p>
               </div>
 
-              <div className={Style.DropZone_box_aside_box_preview_three}>
+              {/* <div className={Style.DropZone_box_aside_box_preview_three}>
                 <p>
-                  <span>Royalties</span>
-                  {royalties || ""}
+                  <span>Description: </span>
+                  {description || ""}
                 </p>
-                <p>
-                  <span>FileSize</span>
-                  {fileSize || ""}
-                </p>
-                <p>
-                  <span>Properties</span>
-                  {properties || ""}
-                </p>
-                <p>
-                  <span>Category</span>
-                  {category || ""}
-                </p>
+              </div> */}
+
+              <div className={Style.DropZone_box_aside_box_preview_one}>
+                
               </div>
             </div>
           </div>

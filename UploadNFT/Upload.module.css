@@ -2,11 +2,12 @@
 
 .upload_box_input_para{
    padding: 0 1rem;
+   margin-top: 10px;
 }
 
 .upload_box_slider_div{
  display: flex;
- gap: 1rem;
+ gap: 1.5rem;
 }
 
 .upload_box_slider{
@@ -14,6 +15,7 @@
     border-radius: 1rem;
     padding: 1rem;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .upload_box_slider_box{
@@ -23,7 +25,9 @@
 }
 
 .upload_box_slider_box_img_img{
-    border-radius: 50%;
+    border-radius: 10%;
+    height: 100px;
+    width: 100px;
 }
 
 .upload_box_slider_box_img_icon{
@@ -38,6 +42,8 @@
     font-size: 1.2rem;
     font-weight: 700;
     line-height: 1.2;
+    text-align: center;
+    margin-top: 5%;
 }
 
 .upload_box_btn{
@@ -63,5 +69,10 @@
     .upload_box_slider_div{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+    }
+    .upload_box_slider_box_img_img{
+        border-radius: 10%;
+        height: 100px;
+        width: 200px;
     }
 }
